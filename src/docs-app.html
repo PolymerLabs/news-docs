@@ -13,9 +13,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-route/app-location.html">
-<link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-location/iron-location.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="docs-icons.html">
@@ -60,11 +59,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-size: 18px;
         letter-spacing: 0.1em;
         font-weight: normal;
-      }
-
-      iron-pages > * {
-        margin-top: 64px;
-        min-height: 100vh;
       }
 
       app-drawer {
@@ -134,36 +128,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-    <app-location route="{{route}}"></app-location>
-    <app-route route="[[route]]" pattern="/:page" data="{{routeData}}"></app-route>
+    <iron-location path="{{path}}"></iron-location>
 
     <app-header reveals threshold="1" effects="waterfall">
       <app-toolbar>
         <button class="menu-button" on-click="_toggleDrawer"><iron-icon icon="menu"></iron-icon></button>
         <h3 class="logo"><a href="/">Polymer News</a></h3>
-        <iron-selector selected="[[page]]" attr-for-selected="name">
-          <a class="tab" href="/getstarted" name="getstarted">Get Started</a>
-          <a class="tab" href="/extend" name="extend">Extend</a>
+        <iron-selector selected="[[path]]" attr-for-selected="path">
+          <a class="tab" href="/get-started.html" path="/get-started.html">Get Started</a>
+          <a class="tab" href="/extend.html" path="/extend.html">Extend</a>
         </iron-selector>
         <a class="tab" href="https://beta.webcomponents.org/element/PolymerElements/app-layout" target="_blank">Reference</a>
       </app-toolbar>
     </app-header>
 
-    <iron-pages
-        selected="[[page]]"
-        attr-for-selected="name"
-        fallback-selection="home"
-        role="main">
-      <docs-home name="home"></docs-home>
-      <docs-getstarted name="getstarted"></docs-getstarted>
-      <docs-extend name="extend"></docs-extend>
-    </iron-pages>
+    <div>
+      <content></content>
+    </div>
 
     <app-drawer id="drawer" tabindex="0" swipe-open>
-      <iron-selector selected="[[page]]" attr-for-selected="name" on-click="_toggleDrawer">
-        <a class="menu-item" href="/" name="home">Home</a>
-        <a class="menu-item" href="/getstarted" name="getstarted">Get Started</a>
-        <a class="menu-item" href="/extend" name="extend">Extend</a>
+      <iron-selector selected="[[path]]" attr-for-selected="path" on-click="_toggleDrawer">
+        <a class="menu-item" href="/" path="/">Home</a>
+        <a class="menu-item" href="/get-started.html" path="/get-started.html">Get Started</a>
+        <a class="menu-item" href="/extend.html" path="/extend.html">Extend</a>
       </iron-selector>
       <a class="menu-item" href="https://beta.webcomponents.org/element/PolymerElements/app-layout" target="_blank">Reference</a>
     </app-drawer>
@@ -177,25 +164,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'docs-app',
 
       properties: {
-        page: String
+        path: String
       },
 
       observers: [
-        '_routePageChanged(routeData.page)',
-        '_pageChanged(page)'
+        '_pathChanged(path)'
       ],
 
       listeners: {
         down: '_down'
       },
 
-      _routePageChanged: function(page) {
-        Polymer.AppLayout.scroll({ top: 0 });
-        this.page = page || 'home';
+      _pathChanged: function(path) {
+        this._fetchDoc(path);
       },
 
-      _pageChanged: function(page) {
-        this.importHref(this.resolveUrl('docs-' + this.page + '.html'), null, null, true);
+      _fetchDoc: function(path) {
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', this._handleResponse.bind(this));
+        xhr.addEventListener('error', this._handleNetworkError.bind(this));
+        xhr.open('GET', path);
+        xhr.responseType = 'document';
+        xhr.send();
+      },
+
+      _handleResponse: function(event) {
+        var doc = event.target.response;
+        document.title = doc.title;
+        var shell = doc ? doc.querySelector('docs-app') : null;
+        this._importShellContent(shell ? this._getContentFrag(shell) : this._createFragFromText('Page Format Error'));
+      },
+
+      _handleNetworkError: function(event) {
+        this._importShellContent(this._createFragFromText('Network Error'));
+      },
+
+      _getContentFrag: function(shell) {
+        var frag = document.createDocumentFragment();
+        for (var i = 0; i < shell.childNodes.length; ++i) {
+          frag.appendChild(document.importNode(shell.childNodes[i], true));
+        }
+        return frag;
+      },
+
+      _createFragFromText: function(text) {
+        var frag = document.createDocumentFragment();
+        frag.appendChild(document.createTextNode(text));
+        return frag;
+      },
+
+      _importShellContent: function(frag) {
+        var shell = Polymer.dom(this);
+        shell.innerHTML = '';
+        shell.appendChild(frag);
+        Polymer.AppLayout.scroll({ top: 0 });
       },
 
       _toggleDrawer: function() {

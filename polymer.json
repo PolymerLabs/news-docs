@@ -1,11 +1,6 @@
 {
   "entrypoint": "/",
   "shell": "src/docs-app.html",
-  "fragments": [
-    "src/docs-home.html",
-    "src/docs-getstarted.html",
-    "src/docs-extend.html"
-  ],
   "sourceGlobs": [
    "src/**/*",
    "images/**/*",
