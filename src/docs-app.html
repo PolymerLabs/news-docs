@@ -1,0 +1,213 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="docs-icons.html">
+
+<dom-module id="docs-app">
+
+  <template>
+
+    <style>
+
+      :host {
+        display: block;
+      }
+
+      app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background-color: #FFF;
+      }
+
+      app-header[threshold-triggered]::before {
+        opacity: 1;
+      }
+
+      .menu-button {
+        padding: 8px;
+        border: none;
+        background-color: transparent;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .logo {
+        flex: 1;
+        padding: 0 8px;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+        font-weight: normal;
+      }
+
+      iron-pages > * {
+        margin-top: 64px;
+        min-height: 100vh;
+      }
+
+      app-drawer {
+        z-index: 2;
+        --app-drawer-content-container: {
+          background-color: #222;
+        }
+      }
+
+      .tab {
+        display: none;
+      }
+
+      .menu-item {
+        display: block;
+        padding: 16px;
+        color: #AAA;
+      }
+
+      .menu-item.iron-selected {
+        color: #FFF;
+      }
+
+      /* desktop screen */
+      @media (min-width: 768px) {
+        app-drawer {
+          display: none;
+        }
+
+        .menu-button {
+          visibility: hidden;
+        }
+
+        .tab {
+          position: relative;
+          display: inline-block;
+          padding: 8px 0;
+          margin: 36px 20px;
+          font-size: 18px;
+          font-weight: normal;
+          letter-spacing: 0.1em;
+          text-decoration: none;
+        }
+
+        .tab::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 2px;
+        }
+
+        .tab:hover {
+          text-decoration: none;
+        }
+
+        .tab:hover::after {
+          border-bottom: 1px solid;
+        }
+
+        .tab.iron-selected::after {
+          border-bottom: 1px solid;
+        }
+
+      }
+
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route route="[[route]]" pattern="/:page" data="{{routeData}}"></app-route>
+
+    <app-header reveals threshold="1" effects="waterfall">
+      <app-toolbar>
+        <button class="menu-button" on-click="_toggleDrawer"><iron-icon icon="menu"></iron-icon></button>
+        <h3 class="logo"><a href="/">Polymer News</a></h3>
+        <iron-selector selected="[[page]]" attr-for-selected="name">
+          <a class="tab" href="/getstarted" name="getstarted">Get Started</a>
+          <a class="tab" href="/extend" name="extend">Extend</a>
+        </iron-selector>
+        <a class="tab" href="https://beta.webcomponents.org/element/PolymerElements/app-layout" target="_blank">Reference</a>
+      </app-toolbar>
+    </app-header>
+
+    <iron-pages
+        selected="[[page]]"
+        attr-for-selected="name"
+        fallback-selection="home"
+        role="main">
+      <docs-home name="home"></docs-home>
+      <docs-getstarted name="getstarted"></docs-getstarted>
+      <docs-extend name="extend"></docs-extend>
+    </iron-pages>
+
+    <app-drawer id="drawer" tabindex="0" swipe-open>
+      <iron-selector selected="[[page]]" attr-for-selected="name" on-click="_toggleDrawer">
+        <a class="menu-item" href="/" name="home">Home</a>
+        <a class="menu-item" href="/getstarted" name="getstarted">Get Started</a>
+        <a class="menu-item" href="/extend" name="extend">Extend</a>
+      </iron-selector>
+      <a class="menu-item" href="https://beta.webcomponents.org/element/PolymerElements/app-layout" target="_blank">Reference</a>
+    </app-drawer>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'docs-app',
+
+      properties: {
+        page: String
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)',
+        '_pageChanged(page)'
+      ],
+
+      listeners: {
+        down: '_down'
+      },
+
+      _routePageChanged: function(page) {
+        Polymer.AppLayout.scroll({ top: 0 });
+        this.page = page || 'home';
+      },
+
+      _pageChanged: function(page) {
+        this.importHref(this.resolveUrl('docs-' + this.page + '.html'), null, null, true);
+      },
+
+      _toggleDrawer: function() {
+        this.$.drawer.toggle();
+      },
+
+      _down: function() {
+        // See Polymer/polymer#4128.
+      }
+
+    });
+
+  </script>
+
+</dom-module>

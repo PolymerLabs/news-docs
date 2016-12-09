@@ -1,0 +1,289 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="docs-icons.html">
+
+<dom-module id="docs-home">
+
+  <template>
+
+    <style>
+
+      :host {
+        display: block;
+      }
+
+      h1 {
+        font-size: 36px;
+        font-weight: normal;
+        letter-spacing: 0.1em;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 1.1;
+      }
+
+      section {
+        padding: 60px 8px;
+        text-align: center;
+      }
+
+      .hero {
+        background-color: #eceff1;
+        background-image: url(/images/hero.png);
+        background-size: cover;
+      }
+
+      .devices {
+        display: block;
+        height: 460px;
+        background-image: url(/images/devices.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+
+      .buttons {
+        padding-top: 16px;
+      }
+
+      .docs-button {
+        display: inline-block;
+        box-sizing: border-box;
+        border: 2px solid #000;
+        background-color: #FFF;
+        font-size: 14px;
+        font-weight: 500;
+        color: inherit;
+        margin: 0 4px;
+        padding: 8px 44px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 0;
+        -webkit-appearance: none;
+      }
+
+      .docs-button:active {
+        background-color: #000;
+        color: #FFF;
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        background-color: #222;
+      }
+
+      .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 160px;
+        padding: 0 16px;
+        color: #FFF;
+      }
+
+      .feature > iron-icon {
+        width: 76px;
+        height: 76px;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FFF;
+      }
+
+      .main-item {
+        display: flex;
+        margin: 16px 0;
+        max-width: 700px;
+        text-align: start;
+      }
+
+      .main-item > img {
+        width: auto;
+        height: 100px;
+        padding-right: 32px;
+      }
+
+      .main-item > div {
+        flex: 1;
+      }
+
+      .main-item h2 {
+        margin-top: 0;
+      }
+
+      .compatibility {
+        background-color: #eceff1;
+      }
+
+      .browsers > img {
+        width: 70px;
+        height: 70px;
+        padding: 20px;
+      }
+
+      /* small screen */
+      @media (max-width: 767px) {
+        section {
+          padding: 24px 8px;
+        }
+
+        .devices {
+          height: 200px;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .buttons > * {
+          width: 240px;
+          margin: 8px 0;
+        }
+
+        .features {
+          flex-direction: column;
+        }
+
+        .feature {
+          width: auto;
+          padding: 8px 0;
+          text-align: inherit;
+        }
+
+        .feature > iron-icon {
+          width: 48px;
+          height: 48px;
+          padding-right: 16px;
+        }
+
+        .feature > p {
+          flex: 1;
+          margin: 4px 0;
+        }
+
+        .main-item {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .main-item > img {
+          width: 48px;
+          height: auto;
+          padding: 0 0 16px 0;
+        }
+
+        .browsers > img {
+          width: 40px;
+          height: 40px;
+          padding: 4px;
+        }
+      }
+
+    </style>
+
+    <section class="hero">
+      <h1>Polymer News</h1>
+      <p>Progress Web App Template</p>
+      <div class="devices"></div>
+      <p>A Progressive Web App starting point for cutting-edge publishers.</p>
+      <p>Built on modern web technology. Use out-of-the-box, or theme, customize and extend.</p>
+      <div class="buttons">
+        <a class="docs-button" href="https://github.com/PolymerLabs/news" target="_blank">View on GitHub</a>
+        <a class="docs-button" href="/getstarted">Get Started</a>
+        <a class="docs-button" href="https://polymer-news.appspot.com" target="_blank">Demo</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <iron-icon icon="icons:mood"></iron-icon>
+        <p>Complete Progressive Web App</p>
+      </div>
+      <div class="feature">
+        <iron-icon icon="icons:domain"></iron-icon>
+        <p>Built out of modular, re-usable Web Components</p>
+      </div>
+      <div class="feature">
+        <iron-icon icon="icons:phonelink"></iron-icon>
+        <p>Responsive application shell architecture</p>
+      </div>
+      <div class="feature">
+        <iron-icon icon="icons:airplanemode-active"></iron-icon>
+        <p>Fast to load and interact with</p>
+      </div>
+      <div class="feature">
+        <iron-icon icon="icons:color-lens"></iron-icon>
+        <p>Easy to customize and extend</p>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="main-item">
+        <img src="/images/pwa-logo.png" alt="PWA logo">
+        <div>
+          <h2>From 0 to Progressive Web App in Minutes</h2>
+          <p>Offline support, lazy loading and Service Worker caching out-of-the-box. Designed to be lightweight and flexible, based on web standards. Get started right away using just HTML, CSS and Javascript.</p>
+        </div>
+      </div>
+      <div class="main-item">
+        <img src="/images/polymer-logo.png" alt="Polymer logo">
+        <div>
+          <h2>Built with Polymer and Web Components</h2>
+          <p>Polymer News is built out of Web Components, created using the Polymer library. This allows them to be lightweight, modular, re-usable, and interoperable with other web technologies and frameworks.</p>
+        </div>
+      </div>
+      <div class="main-item">
+        <img src="/images/amp-logo.png" alt="AMP logo">
+        <div>
+          <h2>Supports AMP documents as articles</h2>
+          <p>The app template supports using a simple JSON feed for your article content. If you publish AMP docs, you can directly use those inside of the News shell instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="compatibility">
+      <h2>Browser Compatibility</h2>
+      <p>The Polymer library and Polymer App Toolbox <a href="https://www.polymer-project.org/1.0/docs/browsers">work in all major browsers</a> (Chrome, Firefox, IE, Edge, Safari, and Opera).</p>
+      <div class="browsers">
+        <img src="/images/browsers/chrome_128x128.png" alt="chrome logo">
+        <img src="/images/browsers/firefox_128x128.png" alt="firefox logo">
+        <img src="/images/browsers/internet-explorer_128x128.png" alt="internet explorer logo">
+        <img src="/images/browsers/edge_128x128.png" alt="edge logo">
+        <img src="/images/browsers/safari_128x128.png" alt="safari logo">
+        <img src="/images/browsers/opera_128x128.png" alt="opera logo">
+      </div>
+    </section>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'docs-home'
+
+    });
+
+  </script>
+
+</dom-module>
