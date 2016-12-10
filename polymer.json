@@ -4,8 +4,10 @@
   "sourceGlobs": [
    "src/**/*",
    "images/**/*",
-   "app.yaml",
+   "stylesheets/**/*",
    "bower.json",
+   "extend.html",
+   "get-started.html",
    "index.html"
   ],
   "includeDependencies": [
