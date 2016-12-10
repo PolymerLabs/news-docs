@@ -1,0 +1,199 @@
+body {
+  margin: 64px 0 0;
+  background-color: #FAFAFA;
+  color: #383838;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  min-height: 101vh;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header {
+  text-align: center;
+  padding: 20px 40px;
+  background-color: #222;
+  color: #FFF;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+section {
+  padding: 60px 8px;
+  text-align: center;
+}
+
+.hero {
+  background-color: #eceff1;
+  background-image: url(/images/hero.png);
+  background-size: cover;
+}
+
+.devices {
+  display: block;
+  height: 460px;
+  background-image: url(/images/devices.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.buttons {
+  padding-top: 16px;
+}
+
+.docs-button {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-color: #FFF;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  margin: 0 4px;
+  padding: 8px 44px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.docs-button:active {
+  background-color: #000;
+  color: #FFF;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  padding: 0 16px;
+  color: #FFF;
+}
+
+.feature > iron-icon {
+  width: 76px;
+  height: 76px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFF;
+}
+
+.main-item {
+  display: flex;
+  margin: 16px 0;
+  max-width: 700px;
+  text-align: start;
+}
+
+.main-item > img {
+  width: auto;
+  height: 100px;
+  padding-right: 32px;
+}
+
+.main-item > div {
+  flex: 1;
+}
+
+.main-item h2 {
+  margin-top: 0;
+}
+
+.compatibility {
+  background-color: #eceff1;
+}
+
+.browsers > img {
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+}
+
+/* small screen */
+@media (max-width: 767px) {
+  header {
+    padding: 10px;
+  }
+
+  section {
+    padding: 24px 8px;
+  }
+
+  .devices {
+    height: 200px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons > * {
+    width: 240px;
+    margin: 8px 0;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .feature {
+    width: auto;
+    padding: 8px 0;
+    text-align: inherit;
+  }
+
+  .feature > iron-icon {
+    width: 48px;
+    height: 48px;
+    padding-right: 16px;
+  }
+
+  .feature > p {
+    flex: 1;
+    margin: 4px 0;
+  }
+
+  .main-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-item > img {
+    width: 48px;
+    height: auto;
+    padding: 0 0 16px 0;
+  }
+
+  .browsers > img {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+}
