@@ -12,7 +12,7 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 ##### Setup
 
     git clone https://github.com/polymerlabs/news-docs.git
-    cd news
+    cd news-docs
     bower install
 
 ### Start the development server

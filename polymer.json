@@ -8,7 +8,8 @@
    "bower.json",
    "extend.html",
    "get-started.html",
-   "index.html"
+   "index.html",
+   "app.yaml"
   ],
   "includeDependencies": [
     "manifest.json",
