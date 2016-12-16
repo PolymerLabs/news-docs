@@ -15,7 +15,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/iron-location/iron-location.html">
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="docs-icons.html">
 
@@ -42,6 +41,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         opacity: 1;
       }
 
+      app-toolbar {
+        padding: 0 20px 0 16px;
+      }
+
       .menu-button {
         padding: 8px;
         border: none;
@@ -65,6 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         z-index: 2;
         --app-drawer-content-container: {
           background-color: #222;
+          margin: 24px 0;
         }
       }
 
@@ -74,7 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .menu-item {
         display: block;
-        padding: 16px;
+        padding: 16px 24px;
         color: #AAA;
       }
 
@@ -82,14 +86,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #FFF;
       }
 
+      footer,
+      .polymer-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      footer {
+        padding: 16px 24px;
+        font-size: 14px;
+      }
+
+      footer img {
+        width: 40px;
+        height: auto;
+        padding-right: 8px;
+      }
+
+      .flex {
+        flex: 1;
+      }
+
       /* desktop screen */
       @media (min-width: 768px) {
-        app-drawer {
+        app-drawer,
+        .menu-button {
           display: none;
         }
 
-        .menu-button {
-          visibility: hidden;
+        .logo {
+          padding: 0 24px;
         }
 
         .tab {
@@ -124,6 +150,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           border-bottom: 1px solid;
         }
 
+        footer {
+          padding: 16px 40px;
+        }
       }
 
     </style>
@@ -145,6 +174,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div>
       <content></content>
     </div>
+
+    <footer>
+      <a class="polymer-logo" href="https://www.polymer-project.org"><img src="/images/polymer-logo.png" alt="Polymer Logo">Polymer</a>
+      <div class="flex"></div>
+      <a target="_blank" href="http://polymer.github.io/LICENSE.txt" data-outbound="license-txt">© 2016 Polymer Authors</a>
+    </footer>
 
     <app-drawer id="drawer" tabindex="0" swipe-open>
       <iron-selector selected="[[path]]" attr-for-selected="path" on-click="_toggleDrawer">
@@ -173,6 +208,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       listeners: {
         down: '_down'
+      },
+
+      attached: function() {
+        window.addEventListener('hashchange', this._scrollToAnchor.bind(this));
+        window.addEventListener('location-changed', this._scrollToAnchor.bind(this));
       },
 
       _pathChanged: function(path) {
@@ -217,7 +257,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var shell = Polymer.dom(this);
         shell.innerHTML = '';
         shell.appendChild(frag);
-        Polymer.AppLayout.scroll({ top: 0 });
+        if (window.location.hash) {
+          this._scrollToAnchor();
+        } else {
+          Polymer.AppLayout.scroll({ top: 0 });
+        }
       },
 
       _toggleDrawer: function() {
@@ -226,6 +270,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _down: function() {
         // See Polymer/polymer#4128.
+      },
+
+      _scrollToAnchor: function() {
+        var hash = window.location.hash;
+        if (hash) {
+          var el = Polymer.dom(this).querySelector(hash);
+          if (el) {
+            el.scrollIntoView();
+          }
+        }
       }
 
     });
