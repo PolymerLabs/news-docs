@@ -15,13 +15,17 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
     cd news-docs
     bower install
 
-### Start the development server
+### Running the site
+
+Run gulp to convert markdown files to html:
+
+    gulp
+
+Then start the development server:
 
     polymer serve
 
-### Run web-component-tester tests
-
-    polymer test
+All the markdown files are in `docs/` folder.  If you make any changes to `docs/*.md` you have to run `gulp` again to generate the pages.
 
 ### Build
 

@@ -4,8 +4,7 @@ module.exports = {
     '/bower_components/webcomponentsjs/webcomponents-lite.min.js',
     '/images/**/*',
     '/stylesheets/*',
-    '/extend.html',
-    '/get-started.html'
+    '/docs/**/*'
   ],
   dynamicUrlToDependencies: {
     '/': ['index.html']

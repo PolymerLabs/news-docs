@@ -7,6 +7,10 @@ handlers:
   static_dir: bower_components
   secure: always
 
+- url: /docs
+  static_dir: docs
+  secure: always
+
 - url: /images
   static_dir: images
   secure: always
@@ -27,16 +31,6 @@ handlers:
 - url: /manifest.json
   static_files: manifest.json
   upload: manifest.json
-  secure: always
-
-- url: /get-started.html
-  static_files: get-started.html
-  upload: get-started.html
-  secure: always
-
-- url: /extend.html
-  static_files: extend.html
-  upload: extend.html
   secure: always
 
 - url: /.*

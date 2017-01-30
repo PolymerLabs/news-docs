@@ -2,12 +2,11 @@
   "entrypoint": "/",
   "shell": "src/docs-app.html",
   "sourceGlobs": [
-   "src/**/*",
+   "docs/**/*",
    "images/**/*",
+   "src/**/*",
    "stylesheets/**/*",
    "bower.json",
-   "extend.html",
-   "get-started.html",
    "index.html",
    "app.yaml"
   ],
