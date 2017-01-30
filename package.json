@@ -1,0 +1,20 @@
+{
+  "name": "PolymerNewsDocs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Polymer News documentation site",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-gray-matter": "^2.2.1",
+    "gulp-help": "^1.6.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
+    "highlight.js": "^8.9.1",
+    "markdown-it": "^6.0.1",
+    "markdown-it-attrs": "^0.1.8",
+    "merge-stream": "^1.0.0",
+    "run-sequence": "^1.1.4",
+    "toc": "PolymerLabs/node-toc"
+  }
+}
