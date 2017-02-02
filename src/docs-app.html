@@ -211,10 +211,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         down: '_down'
       },
 
+      created: function() {
+        this._createAnalytics();
+      },
+
       attached: function() {
         window.addEventListener('hashchange', this._scrollToAnchor.bind(this));
         window.addEventListener('location-changed', this._scrollToAnchor.bind(this));
-        this._createAnalytics();
       },
 
       _pathChanged: function(path) {
