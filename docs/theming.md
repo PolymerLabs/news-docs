@@ -142,18 +142,18 @@ After:
 
 In index.html, change the value of the background-color property to #F1F3F2. Also, change the value of font-family to sans-serif.
 
-index.html
-
+`index.html`
+```
 <style>
-
-    body {
-      margin: 0;
-      background-color: #F1F3F2;
-      color: #383838;
-      font-family: sans-serif;
-      min-height: 100vh;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
+  body {
+	  margin: 0;
+	  background-color: #F1F3F2;
+	  color: #383838;
+	  font-family: sans-serif;
+	  min-height: 100vh;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+```
 
 Before:
 
@@ -163,20 +163,21 @@ After:
 
 ![image alt text](image_4.png)
 
-### **3. Modify the custom properties that define the app's border styles and sticky nav bar styles**
+### 3. Modify the custom properties that define the app's border styles and sticky nav bar styles
 
-To do this, edit the values of the custom properties in news-app.html as follows:
+To do this, edit the values of the custom properties in `news-app.html` as follows:
 
-news-app.html
-
-        --app-border-style: 5px solid #FFF200; 
-        --app-transparent-border-style: 1px solid #FFF200;
-        --app-button-border-style: 2px solid #FFF200;
-        --app-cover-text-color: #FFF;   
-        --app-nav-background-color: #E9E7E8;
-        --app-nav-text-color: #383838;
-        --app-nav-deselected-text-color: #888;
-        --app-nav-selected-background-color: #FFF200;
+`news-app.html`
+```
+        --app-border-style: 5px solid #FFF200;
+		--app-transparent-border-style: 1px solid #FFF200;
+		--app-button-border-style: 2px solid #FFF200;
+		--app-cover-text-color: #FFF;
+		--app-nav-background-color: #E9E7E8;
+		--app-nav-text-color: #383838;
+		--app-nav-deselected-text-color: #888;
+		--app-nav-selected-background-color: #FFF200;
+```
 
 For more information on what these custom properties control, see [Custom Properties Reference](https://github.com/katejeffreys/newsdocs/blob/master/theming.md#custom-properties-reference).
 
@@ -192,28 +193,27 @@ After:
 
 ![image alt text](image_8.png)
 
-### **4. Modify the headline styles of the sub-sections in the list view**
+### 4. Modify the headline styles of the sub-sections in the list view
 
-In news-app.html, update the --app-sub-section-headline mixin.
+In news-app.html, update the `--app-sub-section-headline` mixin.
 
-* Change the value of border-top to none.
+* Change the value of `border-top` to `none`.
+* Change the value of `font-size` to `24px`.
+* Add two properties to this mixin: `font-family: "Georgia"` and `font-style: italic`.
 
-* Change the value of font-size to 24px.
-
-* Add two properties to this mixin: font-family: "Georgia" and font-style: italic.
-
-news-app.html
-
+`news-app.html`
+```
        --app-sub-section-headline: {
-          border-top: var(--app-border-style);
-          border-bottom: var(--app-border-style);
-          font-size: 50px;
-          padding: 8px;
-          text-align: center;
-          font-family: "Georgia";
-          font-size: 24px;
-          font-style: italic;
-        };
+		   border-top: var(--app-border-style);
+		   border-bottom: var(--app-border-style);
+		   font-size: 50px;
+		   padding: 8px;
+		   text-align: center;
+		   font-family: "Georgia";
+		   font-size: 24px;
+		   font-style: italic;
+		   };
+```
 
 For more information on what this mixin controls, see [Custom Properties Reference](https://github.com/katejeffreys/newsdocs/blob/master/theming.md#custom-properties-reference).
 
@@ -229,7 +229,7 @@ The end result can be seen here: [https://polymer-news-theming.appspot.com](http
 
 ![image alt text](image_11.png)
 
-## **Custom Properties Reference**
+## Custom Properties Reference
 
 The following custom properties are defined in news-app.html:
 
