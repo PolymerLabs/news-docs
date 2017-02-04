@@ -1,285 +1,249 @@
 ---
-title: "Case study"
+title: "Case study: the News app"
 ---
 
-<!-- toc -->
+News is a full-featured Progressive Web App (PWA) demo built using the Toolbox. You can try it out here:
 
+<a href="https://news.polymer-project.org/" class="blue-button">Launch News demo</a>
 
-News is a full-featured Progressive Web App demo built using the
-Toolbox. You can try it out here:
-
-<a href="https://news.polymer-project.org/" class="docs-button">Launch News demo
-</a>
-
-This case study shows how News uses the App Toolbox to deliver a great
+This case study shows how News uses the principles of Progressive Web App (PWA) design to deliver a great
 user experience.
 
-## App structure
+# Table of Contents
 
-The News app is made up of two main views: list view and article view.
+* [App Structure](#app-structure)
+* [Views and Routing](#views-and-routing)
+* [Routing and Data Binding in the News App](#routing-and-data-binding-in-the-news-app)
+* [SEO and Social Sharing](#SEO-and-Social-Sharing)
+* [Resource URLs](#resource-urls)
+* [Displaying Ads](#displaying-ads) 
+* [More Resources](#more-resources)
 
-<div class="image-container layout horizontal" style="max-width: 600px;">
+# App Structure
+
+Like other PWAs, News is designed with an [application shell architecture](https://developers.google.com/web/fundamentals/architecture/app-shell). The app shell element, `<news-app>`, contains the main framework for News. Here's the basic structure:
+
+<div class="image-container layout horizontal">
   <div class="image-wrapper">
-    <img src="news-list.png" alt="screenshot of the list view">
-  </div>
-  <div class="image-wrapper">
-    <img src="news-article.png" alt="screenshot of the article view">
+    <img src="/app structure.png" alt="app structure" width="600px">
   </div>
 </div>
 
-`<news-app>`
-News uses an [application shell architecture](https://developers.google.com/web/fundamentals/architecture/app-shell),
-with the `<app-shell>` top-level element providing the main framework for the app.
-The app is composed of `<app-
-drawer>`, `<app-header>` and `<iron-pages>` elements
-to form the basic structure of the app layout. These elements are themeslves
-composed of reusable components like buttons and tabs.
+* `<news-app>` lays out the structure for the application.
+* `<app-route>` contains routing logic that parses the user's selected URL.
+* `<news-data>` fetches resources from the raw HTML files and images in the /data/ folder and its subfolders.
+* `<iron-pages>` switches between the News application's two views - list view and article view. 
+* `<news-list>` is the application's *list view*.
+* `<news-article>` is the application's *article view*.
 
-<!-- ![the high level architecture of the application, as described above](/high-level-arch.png) -->
+<div class="image-container layout horizontal">
+  <div class="image-wrapper">
+    <img src="/news-list.png" alt="screenshot of the list view">
+  </div>
+  <div class="image-wrapper">
+    <img src="/news-article.png" alt="screenshot of the article view">
+  </div>
+</div>
 
-##Routing
+# Views and routing
 
-The news app’s client-side URL routing is based on the `<app-route>` element,
-a modular routing element. `<app-route>` uses the category in the URL to route to the appropriate view:
+Views in the News app use the same implementation as the Shop app. [See the Shop app case study for more information on views and routing](https://www.polymer-project.org/1.0/toolbox/case-study#views).
 
-`news-list.html` { .caption }
-```
-<app-route
-  route="[[route]]"
-  pattern="/:category"
-  data="{{_routeData}}"></app-route>
-```
+For more information on encapsulated routing, see [Encapsulated routing with elements](/1.0/blog/routing).
 
-Category names are stored in the `<news-data>` element.
+For more information on the `<app-route>` Polymer element used in these implementations, see the [`<app-route>` API reference](https://elements.polymer-project.org/elements/app-route).
 
-More information:
-
--   [Encapsulated routing with elements](/1.0/blog/routing)
--   [`<app-route>` API reference](https://elements.polymer-project.org/elements/app-route)
-
-## Views
-
-Views are created lazily on demand. Initially, views are inactive and are instances
-of HTMLElement. Polymer uses the Custom Elements API to upgrade these elements to
-fully-functioning components when the view is switched.
-
-`news-app.html` { .caption }
-```
-_pageChanged: function(page, oldPage) {
-  if (page != null) {
-    this.importHref(
-      this.resolveUrl('news-' + page + '.html'),
-      function() {
-        this._pageLoaded(Boolean(oldPage));
-      }, null, true);
-  }
-},
-```
-`<news-app>` fetches articles and images from the /data/articles folder via the
-`<news-data>` element, and passes it to views for display.
-
-`news-app.html` { .caption }
-```
- <news-data
-        id="data"
-        categories="{{categories}}"
-        category-name="[[categoryName]]"
-        category="{{category}}"
-        article-id="[[articleId]]"
-        article="{{article}}"
-        loading="{{loading}}"
-        offline="[[offline]]"
-        failure="{{failure}}"></news-data>
-```
-
-`<news-app>` also manages the document title and a11y announcer.
-
-`news-app.html` { .caption }
-````
-// Elements in the app can notify section changes.
-// Response by a11y announcing the section and syncronizing the category.
-_updateDocumentTitle: function(page, categoryTitle, articleHeadline) {
-  document.title = (page === 'list' ? categoryTitle : articleHeadline) + ' - NEWS';
-},
-````
-
-###`<news-list>`
-
-The `<news-list>` element displays a list of articles for the selected category - for example,
-Top Stories. The `<news-list>` template uses styles in `<app-layout>` to create responsive layout
-for different sized devices.
-
-When offline and the category data is not cached, `<news-list>` displays a network error via
-the `<news-network-warning>` element:
+There are two main views in the News app. The `<news-list>` element displays a list of articles for the selected category - for example, Top Stories. The `<news-article>` element displays article content. When the user is offline and the category data is not cached, both views display a network error via the `<news-network-warning>` element:
 
 `news-list.html` { .caption }
-```
+```html
     <news-network-warning
         hidden$="[[!failure]]"
         offline="[[offline]]"
         on-try-reconnect="_tryReconnect"></news-network-warning>
 ```
 
-If the user is offline but category data is cached and ServiceWorker is installed,
+If the user is offline but category data is cached and ServiceWorker is installed, 
 the cached content is displayed.
 
-###`<news-article>`
+-   [`<app-route>` API reference](https://elements.polymer-project.org/elements/app-route)
 
-The `<news-article>` element displays the article content. It too uses a responsive layout, and responds to offline status in the same way as `<news-list>`.
+# Routing and Data Binding in the News App
 
-#Extending the News app
+Routing and data bindings work together in the News app to retrieve and display the data relevant to the URL that the user selects.
 
-##Hooking up data
+Polymer's data system allows for data to flow one-way (downward-only, from host element to target element) or two-way (from host to target and target to host). For more information on data binding in Polymer, see [fkjsdkfjl].
 
-All article list and article content data come from `<news-data>` via notifying properties.
-Initially, `<news-data>` provides a list of category objects (the `categories` notifying property).
-This is specified by `categoryList` in news-data.html.
+The News app uses both one-way and two-way binding to transfer data between elements. 
 
-`news-data.html` { .caption }
-```
-    Polymer({
-      is: 'news-data',
-      properties: {
-        categories: {
-          type: Array,
-          value: categoryList,
-          readOnly: true,
-          notify: true
-        },
-        categoryName: String,
-```
+The app shell element, `<news-app>`, acts as the host, while `<news-data>`, `<news-list>`, and `<news-article>` act as targets. `<news-app>` contains data properties for:
 
-```
-    var categoryList = [
-      {name: 'top_stories', title: 'Top Stories'},
-      {name: 'doodles', title: 'Doodles'},
-      {name: 'chrome', title: 'Chrome'},
-      {name: 'search', title: 'Search'},
-      {name: 'shopping_payments', title: 'Shopping & Payments'},
-      {name: 'nonprofits', title: 'Nonprofits'}
-    ];
-```   
+* The name of the current category (`categoryName`)
+* The ID of the current article (`articleId`)
+* The list of articles in the current category (`category`)
+* The raw HTML for the current article (`article`)
 
-By setting the `categoryName` property, `<news-data>` will set the `category` notifying
-property to the category object in the categories list with the matching name:
+## Part 1: Routing
 
-`news-data.html` { .caption }
-```
-        category: {
-          type: Object,
-          computed: '_computeCategory(categoryName)',
-          notify: true
-        },
+`categoryName` and `articleId` are set by the routing logic in the view elements (`<news-list>` and `<news-article>`). The active view element processes the user's selected URL in order to set `categoryName` or `articleId`. The properties are two-way bound between the view elements and the app shell, so they are "pushed" up to the app shell.
+
+For example, here's how the URL `/list/top_stories` would be processed.
+
+The top-level `<app-route>` element in `<news-app>` consumes the first part of the URL, and `page` is set to `"list"`:
+
+`news-app.html`
+```html
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
 ```
 
-`news-data.html` { .caption }
-```
- _computeCategory: function(categoryName) {
-        for (var i = 0, c; c = this.categories[i]; ++i) {
-          if (c.name === categoryName) {
-            return c;
-          }
-        }
-        return null;
-      },
+The `<iron-pages>` element in `<news-app>` displays the `<news-list>` element (because `page` == "list"):
+
+`news-app.html`
+```html
+    <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
 ```
 
-It will then initiate an XHR to query the list of articles in that category
-(e.g. /data/top_stories.json):
+The `<app-route>` element in `<news-list>` consumes the next part of the URL (`/top-stories`), and sets `categoryName` to `top-stories`:
 
-`news-data.html` { .caption }
-```
-_fetchCategory: function(category, offline, attempts) {
-        // Don't fail if we become offline but already have a cached version, or if there's
-        // nothing to fetch, or if something else is already fetching (since all instances of
-        // news-data share the same data object).
-        if ((offline && category.items) || !category || this.loading) {
-          return;
-        }
-        this._fetch('/data/' + category.name + '.json',
-          function(response) {
-            this.set('category.items', this._parseCategoryItems(response));
-          }.bind(this),
-          attempts || 1);
-      },
+`news-list.html`
+```html
+   <app-route
+        route="[[route]]"
+        pattern="/:category"
+        data="{{_routeData}}"></app-route>
 ```
 
-The response is processed to add some additional data, including time since publication;
-estimated read time, based on content length; relative image URL, etc. The response is set
-as the `items` subproperty of that category.
+Two-way data binding in the host element ensures that the data is passed back to `<news-app>`:
 
-`news-data.html` { .caption }
+`news-app.html`
+```html
+<news-list
+  ...
+  category-name="{{categoryName}}"
+  ...
+  >
+</news-list>
 ```
-  _parseCategoryItems: function(response) {
-        var items = [];
 
-        for (var i = 0, item; item = response[i]; ++i) {
-          items.push({
-            headline: this._unescapeText(item.title),
-            href: this._getItemHref(item),
-            id: item.id,
-            imageUrl: this._getItemImage(item),
-            placeholder: item.placeholder,
-            category: item.category,
-            timeAgo: this._timeAgo(new Date(item.time).getTime()),
-            author: item.author,
-            summary: this._trimRight(item.summary, 100),
-            readTime: Math.max(2, Math.round(item.contentLength / 3000)) + ' min read'
-          });
-        }
+## Part 2: Data retrieval
 
-        return items;
+`categoryName` and `articleId` are one-way bound from `<news-app>` to `<news-data>`:
+
+`news-app.html`
+```html
+<news-data
+  ...
+  category-name="[[categoryName]]"
+  article-id="[[articleId]]"
+  ...
+  >
+</news-data>
+```
+
+These properties tell `<news-data>` which resources to retrieve. `<news-data>` then creates an `XMLHttpRequest` for the relevant resources, and stores the resulting category or article information in its `category` and `article` properties. 
+
+For example, if the user has visited `/list/top_stories`, `categoryName` is set to `top_stories`. `<news-data>` queries `/data/top_stories.json` and retrieves a list of the articles in the `top_stories` category. This list is stored in `category`.
+
+The `category` and `article` properties are two-way bound from `<news-app>` to `<news-data>`, and therefore propagate back to `<news-app>`:
+
+`news-app.html`
+```html
+   <news-data
+     ...
+        category="{{category}}"
+     ...
+        article="{{article}}"
+     ...
+   ></news-data>
 ```        
 
-It will then initiate an XHR to query the list of articles in that category (e.g. /data/top_stories.json).
-The response is processed to add some additional data (e.g. string format time ago since article was
-published, estimated read time based on content length, relative image URL, etc.), and is set as the
-`items` subproperty of that category.
+## Part 3: Data display
 
-Likewise, by setting the `articleId` property, `<news-data>` will set the `article` notifying property
-to the article object in the category articles list (`items`) to the article with the matching ID.
-It will then initiate an XHR to get the article content (e.g. /data/articles/it-takes-teacher.html)
-and set the response as the `html` subproperty on that article
+`category` and `article` are one-way bound from `<news-app>` to the elements that display this content (`<news-list>` and `<news-article>`. When these properties are updated in `<news-app>`, triggered by their change of state in `<news-data>`, they flow down to `<news-list>` or `<news-article>`, depending on routing.
 
-`news-data.html` { .caption }
+For example, if the user has visited `/list/top_stories`, `<news-data>` has populated `<news-app>`'s `category` object with a list of articles in the `top_stories` category. The data now propagates to `<news-list>` through one-way data binding:
+
+`news-app.html`
+```html
+<news-list
+  ...
+  category="[[category]]"
+  ...
+></news-list>
 ```
-       this._fetch('/data/articles/' + article.id + '.html',
-          function(response) {
-            this.set('article.html', this._formatHTML(response));
-          }.bind(this),
-          1, true);
+
+These relationships are shown here:
+
+<div class="image-container layout horizontal">
+  <div class="image-wrapper">
+    <img src="/data binding.png" alt="data binding relationships">
+  </div>
+
+This sequence diagram shows the interactions between the elements of the News app when the user visits `/list/top_stories`:
+
+<div class="image-container layout horizontal">
+  <div class="image-wrapper">
+    <img src="sequence diagram.png" alt="sequence diagram of data flow">
+  </div>
+
+# SEO and Social Sharing
+
+A small piece of server code in the News app checks the requesting user agent whenever the user navigates to a URL in your app. If the user agent is a browser, the application returns index.html and the app's routing logic is executed to display the requested content.
+
+However, some user agents (such as certain indexers and social sharing sites) don't run JavaScript. If the user agent is a well-known member of this category, the News app returns a static HTML page so that the page can be parsed and indexed or displayed correctly in a social site.
+
+`main.py`
+```python
+class ArticlePage(webapp2.RequestHandler):
+  def get(self, **kwargs):
+    bots = '|'.join([
+        'Googlebot',
+        'bingbot',
+        'msnbot',
+        'facebookexternalhit',
+        'Facebot',
+        'Twitterbot',
+        'Google-Structured-Data-Testing-Tool'
+      ])
+    if re.search(bots, self.request.headers.get('User-Agent'), re.I):
+      self.response.out.write(open('data/articles/' + kwargs['article_id'] + '.html').read())
+    else:
+      self.response.out.write(open('index.html').read())
+```
+
+# Resource URLs
+
+Resource URLs, like `/bower_components/`, `/data/` and `/src/` are served as static files. These static URLs are defined in `app.yaml`. These URLs are used internally by the app to load components and data.
+
+# Displaying Ads 
+
+The News app attempts to display ads, without blocking a fast first paint.
+
+The <news-iframe> element uses [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), a web platform API. `IntersectionObserver` is used to determine whether `<news-iframe>` element is visible on screen before creating an iframe that will display an ad. 
+
+`news-iframe.html`
+```javascript
+attached: function() {
+        if ('IntersectionObserver' in window) {
+          this._io = new IntersectionObserver(this._createIframe.bind(this));
+          this._io.observe(this);
+        } else {
+          // Intersection Observer is not available, so just create the iframe
+          // after a bit of a delay.
+          window.setTimeout(this._createIframe.bind(this), 100);
+        }
       },
 ```
 
-`news-data.html` { .caption }
-```
-      _fetch: function(url, callback, attempts, isRaw) {
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', function(e) {
-          this._setLoading(false);
-          if (isRaw) {
-            callback(e.target.responseText);
-          } else {
-            callback(JSON.parse(e.target.responseText));
-          }
-        }.bind(this));
-        xhr.addEventListener('error', function(e) {
-          // Flaky connections might fail fetching resources
-          if (attempts > 1) {
-            this.debounce('_fetch', this._fetch.bind(this, url, callback, attempts - 1), 200);
-          } else {
-            this._setLoading(false);
-            this._setFailure(true);
-          }
-        }.bind(this));
-```
+If IntersectionObserver isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
 
-<news-data> also provides notifying `loading` and `failure` properties which reflect the status of XHR requests
-<news-data> also accepts an `offline` property which, when changed from true to false, will trigger an observer to retry XHR requests
 
-As mentioned above, `<news-data>` relies on two types of data files: A list of articles in each category (e.g. /data/top_stories.json) and the article content data itself (e.g. /data/articles/it-takes-teacher.html).
-
-## More resources
+# More Resources
 
 If you want to look at the News app in more detail, you can find the full source
 on GitHub:
