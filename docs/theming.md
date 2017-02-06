@@ -86,14 +86,18 @@ In this tutorial, we modify the look and feel of the News theme from [the defaul
 
 Before:
 
-![image alt text](image_0.png)
+![News theme before modifications](image_0.png)
+
+After:
+
+![News theme after modifications](image_01.png)
 
 We'll take these steps:
 
 * [Modify the site name](#modify-the-site-name)
 * [Modify the page background color and font family](#modify-the-page-background-color-and-font-family)
 * [Modify border and sticky nav bar styles](#modify-border-and-sticky-nav-bar-styles)
-* [Modify sub-section headline styles in the list view](#)
+* [Modify sub-section headline styles in the list view](#modify-sub-section-headline-styles-in-the-list-view)
 
 ### Modify the site name
 
@@ -118,11 +122,11 @@ In `index.html`, change the document title and the value of the `app-title` prop
 
 Before:
 
-![image alt text](image_1.png)
+![News site before modifying the title](image_1.png)
 
 After:
 
-![image alt text](image_2.png)
+![News site after modifying the title](image_2.png)
 
 ### Modify the page background color and font family
 
@@ -145,11 +149,11 @@ In `index.html`, change the value of the background-color property to `#F1F3F2`.
 
 Before:
 
-![image alt text](image_3.png)
+![Before modifying background color and font family](image_3.png)
 
 After:
 
-![image alt text](image_4.png)
+![After modifying background color and font family](image_4.png)
 
 ### Modify border and sticky nav bar styles
 
@@ -189,15 +193,15 @@ For more information on what these custom properties control, see the [Custom Pr
 
 Before:
 
-![image alt text](image_5.png)
+![Before modifying border styles](image_5.png)
 
-![image alt text](image_6.png)
+![Before modifying sticky nav bar styles](image_6.png)
 
 After:
 
-![image alt text](image_7.png)
+![After modifying border styles](image_7.png)
 
-![image alt text](image_8.png)
+![After modifying sticky nav bar styles](image_8.png)
 
 ### Modify sub-section headline styles in the list view
 
@@ -244,15 +248,15 @@ For more information on what this mixin controls, see the [Custom Properties Ref
 
 Before:
 
-![image alt text](image_9.png)
+![Before modifying subsection headline styles](image_9.png)
 
 After:
 
-![image alt text](image_10.png)
+![After modifying subsection headline styles](image_10.png)
 
 The end result can be seen here: [https://polymer-news-theming.appspot.com](https://polymer-news-theming.appspot.com)
 
-![image alt text](image_11.png)
+![After modifying the news site theme](image_11.png)
 
 ## Custom Properties Reference
 
