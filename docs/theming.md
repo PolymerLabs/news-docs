@@ -263,96 +263,103 @@ The end result can be seen here: [https://polymer-news-theming.appspot.com](http
 The following custom properties are defined in news-app.html:
 
 <table>
-  <tr>
-    <td>Custom property</td>
-    <td>Description</td>
-    <td>Default</td>
+ <tr>
+    <td width="20%">Custom property</td>
+    <td width="60%">Description</td>
+    <td width="20%">Default</td>
   </tr>
   <tr>
-    <td>--app-border-style</td>
-    <td>The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.
-Examples:
---app-border-style: 1px solid #CCC; 
-
---app-border-style: 5px solid #FFF200; 
-</td>
-    <td>1px solid #CCC</td>
+  <td><pre>--app-border-style</pre></td>
+    <td>
+	<p>The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.</p>
+	<p>Examples:</p>
+	<p><pre>--app-border-style: 1px solid #CCC;</pre></p>
+	<img src="app-border-style.png">
+	<p><pre>--app-border-style: 5px solid #FFF200;</pre></p>
+	<img src="app-border-style-1.png"> 
+    </td>
+    <td><pre>1px solid #CCC</pre></td>
   </tr>
   <tr>
-    <td>--app-transparent-border-style</td>
-    <td>The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)
-Examples:
---app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);
-
---app-transparent-border-style: 5px solid #FFF200;
-
-</td>
-    <td>1px solid rgba(255, 255, 255, 0.5)</td>
+    <td><pre>--app-transparent-border-style</pre></td>
+    <td><p>The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)</p>
+	<p>Examples:</p>
+	<p><pre>--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);</pre></p>
+	<img src="app-transparent-border-style.png">
+	<p><pre>--app-transparent-border-style: 5px solid #FFF200;</pre></p>
+	<img src="app-transparent-border-style-1.png">
+    </td>
+    <td><pre>1px solid rgba(255, 255, 255, 0.5)</pre></td>
   </tr>
   <tr>
-    <td>--app-button-border-style</td>
-    <td>Width, style and color of borders around buttons. Used in news-network-warning.html.</td>
-    <td>2px solid #222</td>
+    <td><pre>--app-button-border-style</pre></td>
+    <td><p>Width, style and color of borders around buttons. Used in <code>news-network-warning.html</code>.</p></td>
+    <td><pre>2px solid #222</pre></td>
   </tr>
   <tr>
-    <td>--app-cover-text-color</td>
-    <td>Color of the text on the featured item in the list view. See Notes below.
-Examples:
- --app-cover-text-color: #FFF;	
-
- --app-cover-text-color: orange;	
-</td>
-    <td>#FFF</td>
+    <td><pre>--app-cover-text-color</pre></td>
+    <td><p>Color of the text on the featured item in the list view. See [Notes](#notes) below</p>.
+	<p>Examples:</p>
+	<p><pre>--app-cover-text-color: #FFF;</pre></p>
+	<img src="app-cover-text-color.png">
+	<p><pre>--app-cover-text-color: orange;</pre></p>
+	<img src="app-cover-text-color-1.png">
+	</td>
+    <td><pre>#FFF</pre></td>
   </tr>
   <tr>
-    <td>--app-nav-background-color</td>
-    <td>Background of the sticky nav bar/mobile app drawer.
-Examples:
---app-nav-background-color: #E9E7E8;
-
---app-nav-background-color: orange;
-</td>
-    <td>#222</td>
+    <td><pre>--app-nav-background-color</pre></td>
+    <td><p>Background of the sticky nav bar/mobile app drawer.</p>
+		<p>Examples:</p>
+		<p><pre>--app-nav-background-color: #E9E7E8;</pre></p>
+		<img src="app-nav-background-color.png">
+		<p><pre>--app-nav-background-color: orange;</pre></p>
+		<img src="app-nav-background-color-1.png">
+    </td>
+    <td><pre>#222</pre></td>
   </tr>
   <tr>
-    <td>--app-nav-text-color</td>
-    <td>Text color for the sticky nav bar/mobile app drawer.</td>
-    <td>#FFF</td>
+    <td><pre>--app-nav-text-color</pre></td>
+    <td><p>Text color for the sticky nav bar/mobile app drawer.</p></td>
+    <td><pre>#FFF</pre></td>
   </tr>
   <tr>
-    <td>--app-nav-deselected-text-color</td>
-    <td>Text color of category links in the sticky nav bar menu/mobile app drawer.
---app-nav-deselected-text-color: #888;
-
---app-nav-deselected-text-color: blue;
-</td>
-    <td>#CCC</td>
+    <td><pre>--app-nav-deselected-text-color</pre></td>
+    <td><p>Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
+	<p><pre>--app-nav-deselected-text-color: #888;</pre></p>
+	<img src="app-nav-deselected-text-color.png">
+	<p><pre>--app-nav-deselected-text-color: blue;</pre></p>
+	<img src="app-nav-deselected-text-color-1.png">
+	</td>
+    <td><pre>#CCC</pre></td>
   </tr>
   <tr>
-    <td>--app-nav-selected-background-color</td>
-    <td>Background color of current category in mobile app drawer.
---app-nav-selected-background-color: #555;
-
---app-nav-selected-background-color: #FFF200;
-</td>
-    <td>#555</td>
+    <td><pre>--app-nav-selected-background-color</pre></td>
+    <td>
+		<p>Background color of current category in mobile app drawer.</p>
+		<p><pre>--app-nav-selected-background-color: #555;</pre></p>
+		<img src="app-nav-selected-background-color.png">
+		<p><pre>--app-nav-selected-background-color: #FFF200;</pre></p>
+		<img src="app-nav-selected-background-color-1.png">
+	</td>
+    <td><pre>#555</pre></td>
   </tr>
   <tr>
-    <td>--app-sub-section-headline</td>
-    <td>Mixin for headlines of the sub-sections in the list view.</td>
-    <td>See Notes</td>
+    <td><pre>--app-sub-section-headline</pre></td>
+    <td><p>Mixin for headlines of the sub-sections in the list view.</p></td>
+    <td>See [Notes](#notes).</td>
   </tr>
 </table>
 
 
-### **Notes**
+### Notes
 
-#### **--app-cover-text-color for mobile**
+#### --app-cover-text-color for mobile
 
-For mobile, the equivalent value of --app-cover-text-color is hard-coded in index.html to allow for browsers that don't support custom properties:
+For mobile, the equivalent value of `--app-cover-text-color` is hard-coded in `index.html` to allow for browsers that don't support custom properties:
 
-index.html
-
+`index.html`
+```html
 /* mobile */
     @media (max-width: 767px) {
       body {
@@ -367,9 +374,11 @@ index.html
         color: #FFF; /* --app-cover-text-color */
       }
     }
+```
 
-#### **--app-sub-section-headline**** default values**
-
+#### --app-sub-section-headline default values**
+`news.app.html`
+```html
 --app-sub-section-headline: {
           border-top: var(--app-border-style);
           border-bottom: var(--app-border-style);
@@ -377,13 +386,14 @@ index.html
           padding: 8px;
           text-align: center;
         };
+```
 
 With defaults:
 
 ![image alt text](image_12.png)
 
 With these changes:
-
+```html
 --app-sub-section-headline: {
           border-top: none;
           border-bottom: none;
@@ -391,7 +401,7 @@ With these changes:
           padding: 8px;
           text-align: left;
         };
-
+```
 ![image alt text](image_13.png)
 
 ## **Reference: Hard-coded values**
