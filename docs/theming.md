@@ -408,10 +408,9 @@ With these changes:
 
 To change the page background color, margin, font, and text color for the app, edit this section of index.html:
 
-index.html
-
+`index.html`
+```html
 <style>
-
     body {
       margin: 0;
       background-color: #FAFAFA;
@@ -422,4 +421,5 @@ index.html
     }
     ...
 </style>
+```
 
