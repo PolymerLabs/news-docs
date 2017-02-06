@@ -156,7 +156,7 @@ After:
 To modify border and sticky nav bar styles, we'll edit the values of the custom properties that control them. These properties are stored in `news-app.html`. Edit this file as follows:
 
 `news-app.html`: Before
-```css
+```html
 <style>
 	--app-border-style: 1px solid #CCC;
 	--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);
@@ -171,7 +171,7 @@ To modify border and sticky nav bar styles, we'll edit the values of the custom 
 ```
 
 `news-app.html`: After
-```
+```html
 <style>
 	--app-border-style: 5px solid #FFF200;
 	--app-transparent-border-style: 1px solid #FFF200;
