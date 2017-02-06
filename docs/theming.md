@@ -80,8 +80,7 @@ To change border styles and colors throughout the app, edit the value of `--app-
 ```
 
 
-
-## **## ****Tutorial: Modify the News theme**
+## Tutorial: Modify the News theme
 
 In this tutorial, we modify the look and feel of the News theme from [the defaults](https://polymer-news.appspot.com/) to match [this design](https://polymer-news-theming.appspot.com).
 
@@ -89,31 +88,32 @@ Before:
 
 ![image alt text](image_0.png)
 
-### **### 1. Modify the site name**
+We'll take these steps:
+
+* [Modify the site name](#modify-the-site-name)
+* [Modify the page background color and font family](#modify-the-page-background-color-and-font-family)
+* [Modify border and sticky nav bar styles](#modify-border-and-sticky-nav-bar-styles)
+* [Modify sub-section headline styles in the list view](#)
+
+### Modify the site name
 
 In `index.html`, change the document title and the value of the `app-title` property and the contents of `<news-app>` from "NEWS" to your choice of title.
 
 `index.html`
-
 ```html
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-
-  <title>Your Site Title</title>
-
-  <link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
-  <meta name="theme-color" content="#000">
-  <link rel="manifest" href="/manifest.json">
-  ...
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<title>Your Site Title</title>
+	<link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
+	<meta name="theme-color" content="#000">
+	<link rel="manifest" href="/manifest.json">
+	...
 </head>
 ...
 <body>
-
-  <news-app unresolved app-title="Your Site Title">Your Site Title</news-app>
+	<news-app unresolved app-title="Your Site Title">Your Site Title</news-app>
 </body>
-
 ```
 
 Before:
@@ -124,21 +124,23 @@ After:
 
 ![image alt text](image_2.png)
 
-### **2. Modify the page background color and font family**
+### Modify the page background color and font family
 
-In index.html, change the value of the background-color property to #F1F3F2. Also, change the value of font-family to sans-serif.
+In `index.html`, change the value of the background-color property to `#F1F3F2`. Also, change the value of `font-family` to `sans-serif`.
 
 `index.html`
-```
+```html
 <style>
-  body {
-	  margin: 0;
-	  background-color: #F1F3F2;
-	  color: #383838;
-	  font-family: sans-serif;
-	  min-height: 100vh;
-	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
+	body {
+		margin: 0;
+		background-color: #F1F3F2;
+		color: #383838;
+		font-family: sans-serif;
+		min-height: 100vh;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	...
+</style>
 ```
 
 Before:
@@ -149,23 +151,41 @@ After:
 
 ![image alt text](image_4.png)
 
-### 3. Modify the custom properties that define the app's border styles and sticky nav bar styles
+### Modify border and sticky nav bar styles
 
-To do this, edit the values of the custom properties in `news-app.html` as follows:
+To modify border and sticky nav bar styles, we'll edit the values of the custom properties that control them. These properties are stored in `news-app.html`. Edit this file as follows:
 
-`news-app.html`
+`news-app.html`: Before
+```css
+<style>
+	--app-border-style: 1px solid #CCC;
+	--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);
+	--app-button-border-style: 2px solid #222;
+	--app-cover-text-color: #FFF;
+	--app-nav-background-color: #222;
+	--app-nav-text-color: #FFF;
+	--app-nav-deselected-text-color: #CCC;
+	--app-nav-selected-background-color: #555;
+	...
+</style>
 ```
-        --app-border-style: 5px solid #FFF200;
-		--app-transparent-border-style: 1px solid #FFF200;
-		--app-button-border-style: 2px solid #FFF200;
-		--app-cover-text-color: #FFF;
-		--app-nav-background-color: #E9E7E8;
-		--app-nav-text-color: #383838;
-		--app-nav-deselected-text-color: #888;
-		--app-nav-selected-background-color: #FFF200;
+
+`news-app.html`: After
+```
+<style>
+	--app-border-style: 5px solid #FFF200;
+	--app-transparent-border-style: 1px solid #FFF200;
+	--app-button-border-style: 2px solid #FFF200;
+	--app-cover-text-color: #FFF;
+	--app-nav-background-color: #E9E7E8;
+	--app-nav-text-color: #383838;
+	--app-nav-deselected-text-color: #888;
+	--app-nav-selected-background-color: #FFF200;
+	...
+</style>
 ```
 
-For more information on what these custom properties control, see [Custom Properties Reference](https://github.com/katejeffreys/newsdocs/blob/master/theming.md#custom-properties-reference).
+For more information on what these custom properties control, see the [Custom Properties Reference](#custom-properties-reference) below.
 
 Before:
 
@@ -179,29 +199,48 @@ After:
 
 ![image alt text](image_8.png)
 
-### 4. Modify the headline styles of the sub-sections in the list view
+### Modify sub-section headline styles in the list view
 
-In news-app.html, update the `--app-sub-section-headline` mixin.
+In `news-app.html`, update the `--app-sub-section-headline` mixin.
 
 * Change the value of `border-top` to `none`.
 * Change the value of `font-size` to `24px`.
 * Add two properties to this mixin: `font-family: "Georgia"` and `font-style: italic`.
 
-`news-app.html`
-```
-       --app-sub-section-headline: {
-		   border-top: var(--app-border-style);
-		   border-bottom: var(--app-border-style);
-		   font-size: 50px;
-		   padding: 8px;
-		   text-align: center;
-		   font-family: "Georgia";
-		   font-size: 24px;
-		   font-style: italic;
-		   };
+`news-app.html`: Before
+```html
+<style>
+	...
+	--app-sub-section-headline: {
+		border-top: var(--app-border-style);
+		border-bottom: var(--app-border-style);
+		font-size: 13px;
+		padding: 8px;
+ 		text-align: center;
+	};
+ 	...
+ </style>
+ ```
+
+`news-app.html`: After
+```html
+<style>
+	...
+ 	--app-sub-section-headline: {
+		border-top: var(--app-border-style);
+		border-bottom: var(--app-border-style);
+		font-size: 50px;
+		padding: 8px;
+		text-align: center;
+		font-family: "Georgia";
+		font-size: 24px;
+		font-style: italic;
+	};
+	...
+</style>
 ```
 
-For more information on what this mixin controls, see [Custom Properties Reference](https://github.com/katejeffreys/newsdocs/blob/master/theming.md#custom-properties-reference).
+For more information on what this mixin controls, see the [Custom Properties Reference](#custom-properties-reference).
 
 Before:
 
