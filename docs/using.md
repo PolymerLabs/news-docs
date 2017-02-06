@@ -1,10 +1,14 @@
-# Using the News app
+---
+title: "Using the News app"
+---
+
+<!-- toc -->
 
 This tutorial will quickly guide you through plugging your own content into the News app and publishing your site.
 
 To follow it, you’ll need a set of articles in html files, along with all of the images you need to display or link to.
 
-Notes: 
+Notes:
 
 * This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on Theming and styling the News app.
 
@@ -24,12 +28,12 @@ Also, update the value of the app-title property and the contents of <news-app>:
 `index.html`
 ```
 <body>
-  ...	
+  ...
   <news-app unresolved app-title="The Lorem Ipsum Ovserver">The Lorem Ipsum Observer</news-app>
   ...
 </body>
 ```
-  
+
 Before:
 
 ![image alt text](image_0.png)
@@ -56,9 +60,9 @@ After:
       {name: 'nonprofits', title: 'Nonprofits'}
     ];
 ```
-		
+
 `news-data.html`: After
-```	
+```
 <dom-module id="news-data">
   <script>
   (function() {
@@ -68,7 +72,7 @@ After:
       {name: 'adipiscing_elit', title: 'Adipiscing Elit'},
     ];
 ```
-		
+
 ### 2.2 Update the default route
 
 In news-app.html, update the default route to one of your categories:
@@ -92,7 +96,7 @@ _routePageChanged: function(page) {
     return;
   }
 ```
-  
+
 ### 2.3 Create `.json` files for each category
 
 For each category, create a `.json` file containing a list of the articles and article metadata in that category. Follow the [specification for <category>.json files](https://docs.google.com/document/d/1DmL34vDDjpkaZ45dWMzwdA9sTfB9JjFdZWaKDD8Muo0/edit#). Alternately, you could implement a web service that returns the list of articles for a given category in this format.
@@ -118,7 +122,7 @@ this._fetch('http://your/path/here/' + category.name + '.json',
           }.bind(this),
           attempts || 1 /* attempts */);
 ```
-		   
+
 Before:
 
 ![image alt text](image_2.png)
@@ -176,13 +180,13 @@ polymer build
 
 ### 5.2 Test the build
 
-To test the build, you can serve your app on the development server. The polymer build command generates both a bundled and unbundled version of your app. 
+To test the build, you can serve your app on the development server. The polymer build command generates both a bundled and unbundled version of your app.
 
 * In a bundled build, all fragments are bundled into the same file to reduce the number of file requests. This is optimal for sending to clients or serving from servers that are not HTTP/2 compatible.
 
 * In an unbundled build, fragments are left in separate files. Optimal for HTTP/2-compatible servers and clients.
 
-You can choose whether to serve the bundled or unbundled version. 
+You can choose whether to serve the bundled or unbundled version.
 
 To serve the unbundled version of your app:
 

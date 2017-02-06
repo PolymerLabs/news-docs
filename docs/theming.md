@@ -1,4 +1,9 @@
-# Theming and Styling the News App
+---
+title: "Theming"
+subtitle: "Theming and Styling the News App"
+---
+
+<!-- toc -->
 
 The look and feel of the News app is mostly controlled by the custom properties defined in `news-app.html`. However, to avoid FOUC on browsers in which custom properties have no native implementation, the following properties are defined with literal values in index.html:
 
@@ -72,7 +77,7 @@ To change border styles and colors throughout the app, edit the value of `--app-
 <style>
 	:host {
 		...
-		--app-border-style: 5px solid #FFF200; 
+		--app-border-style: 5px solid #FFF200;
     	--app-transparent-border-style: 1px solid #FFF200;
     	...
 	}
@@ -276,7 +281,7 @@ The following custom properties are defined in news-app.html:
 	<p><pre>--app-border-style: 1px solid #CCC;</pre></p>
 	<img src="app-border-style.png" alt="--app-border-style custom property default">
 	<p><pre>--app-border-style: 5px solid #FFF200;</pre></p>
-	<img src="app-border-style-1.png" alt="--app-border-style custom property modified"> 
+	<img src="app-border-style-1.png" alt="--app-border-style custom property modified">
     </td>
     <td><pre>1px solid #CCC</pre></td>
   </tr>
@@ -416,10 +421,9 @@ To change the page background color, margin, font, and text color for the app, e
       background-color: #FAFAFA;
       color: #383838;
       font-family: Georgia;
-      min-height: 100vh; /* Pushes footer content below the fold during initial page load to avoid FOUC */ 
+      min-height: 100vh; /* Pushes footer content below the fold during initial page load to avoid FOUC */
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Overrides the iOS default transparent grey highlight when tapping a link */
     }
     ...
 </style>
 ```
-
