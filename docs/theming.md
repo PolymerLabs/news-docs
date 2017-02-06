@@ -274,9 +274,9 @@ The following custom properties are defined in news-app.html:
 	<p>The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.</p>
 	<p>Examples:</p>
 	<p><pre>--app-border-style: 1px solid #CCC;</pre></p>
-	<img src="app-border-style.png">
+	<img src="app-border-style.png" alt="--app-border-style custom property default">
 	<p><pre>--app-border-style: 5px solid #FFF200;</pre></p>
-	<img src="app-border-style-1.png"> 
+	<img src="app-border-style-1.png" alt="--app-border-style custom property modified"> 
     </td>
     <td><pre>1px solid #CCC</pre></td>
   </tr>
@@ -285,9 +285,9 @@ The following custom properties are defined in news-app.html:
     <td><p>The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)</p>
 	<p>Examples:</p>
 	<p><pre>--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);</pre></p>
-	<img src="app-transparent-border-style.png">
+	<img src="app-transparent-border-style.png" alt="--app-transparent-border-style custom property default">
 	<p><pre>--app-transparent-border-style: 5px solid #FFF200;</pre></p>
-	<img src="app-transparent-border-style-1.png">
+	<img src="app-transparent-border-style-1.png" alt="--app-transparent-border-style custom property modified">
     </td>
     <td><pre>1px solid rgba(255, 255, 255, 0.5)</pre></td>
   </tr>
@@ -301,9 +301,9 @@ The following custom properties are defined in news-app.html:
     <td><p>Color of the text on the featured item in the list view. See [Notes](#notes) below</p>.
 	<p>Examples:</p>
 	<p><pre>--app-cover-text-color: #FFF;</pre></p>
-	<img src="app-cover-text-color.png">
+	<img src="app-cover-text-color.png" alt="--app-cover-text-color default">
 	<p><pre>--app-cover-text-color: orange;</pre></p>
-	<img src="app-cover-text-color-1.png">
+	<img src="app-cover-text-color-1.png" alt="--app-cover-text-color modified">
 	</td>
     <td><pre>#FFF</pre></td>
   </tr>
@@ -312,9 +312,9 @@ The following custom properties are defined in news-app.html:
     <td><p>Background of the sticky nav bar/mobile app drawer.</p>
 		<p>Examples:</p>
 		<p><pre>--app-nav-background-color: #E9E7E8;</pre></p>
-		<img src="app-nav-background-color.png">
+		<img src="app-nav-background-color.png" alt="--app-nav-background-color default">
 		<p><pre>--app-nav-background-color: orange;</pre></p>
-		<img src="app-nav-background-color-1.png">
+		<img src="app-nav-background-color-1.png" alt="--app-nav-background-color modified">
     </td>
     <td><pre>#222</pre></td>
   </tr>
@@ -327,10 +327,10 @@ The following custom properties are defined in news-app.html:
     <td><pre>--app-nav-deselected-text-color</pre></td>
     <td><p>Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
 	<p><pre>--app-nav-deselected-text-color: #888;</pre></p>
-	<img src="app-nav-deselected-text-color.png">
+	<img src="app-nav-deselected-text-color.png" alt="--app-nav-deselected-text-color default">
 	<p><pre>--app-nav-deselected-text-color: blue;</pre></p>
-	<img src="app-nav-deselected-text-color-1.png">
-	</td>
+	<img src="app-nav-deselected-text-color-1.png" alt="--app-nav-deselected-text-color modified">
+    </td>
     <td><pre>#CCC</pre></td>
   </tr>
   <tr>
@@ -338,9 +338,9 @@ The following custom properties are defined in news-app.html:
     <td>
 		<p>Background color of current category in mobile app drawer.</p>
 		<p><pre>--app-nav-selected-background-color: #555;</pre></p>
-		<img src="app-nav-selected-background-color.png">
+		<img src="app-nav-selected-background-color.png" alt="--app-nav-selected-background-color default">
 		<p><pre>--app-nav-selected-background-color: #FFF200;</pre></p>
-		<img src="app-nav-selected-background-color-1.png">
+		<img src="app-nav-selected-background-color-1.png" alt="--app-nav-selected-background-color modified">
 	</td>
     <td><pre>#555</pre></td>
   </tr>
@@ -376,7 +376,7 @@ For mobile, the equivalent value of `--app-cover-text-color` is hard-coded in `i
     }
 ```
 
-#### --app-sub-section-headline default values**
+#### --app-sub-section-headline default values
 `news.app.html`
 ```html
 --app-sub-section-headline: {
@@ -390,7 +390,7 @@ For mobile, the equivalent value of `--app-cover-text-color` is hard-coded in `i
 
 With defaults:
 
-![image alt text](image_12.png)
+![--app-sub-section-headline defaults](image_12.png)
 
 With these changes:
 ```html
@@ -402,7 +402,7 @@ With these changes:
           text-align: left;
         };
 ```
-![image alt text](image_13.png)
+![--app-sub-section-headline modified](image_13.png)
 
 ## **Reference: Hard-coded values**
 
