@@ -240,7 +240,7 @@ attached: function() {
       },
 ```
 
-If IntersectionObserver isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
+If `IntersectionObserver` isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
 
 
 # More Resources
