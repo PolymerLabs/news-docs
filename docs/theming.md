@@ -8,92 +8,78 @@ The look and feel of the News app is mostly controlled by the custom properties 
 
 ## Basic theming for the News app
 
-Broad changes to the look and feel of the News app can be made with a few properties in `index.html` and `news-app.html`.
+Broad changes to the look and feel of the News app can be made with a few properties in `index.html` and `news-app.html`. Here's how to modify:
 
-* [Background color](#background-color)
-* [Font](#font)
-* [Text color](#text-color)
-* [Border styles and colors](#border-styles-and-colors)
+* The [page background color](#page-background-color) used throughout the app
+* The main [font](#font) used in the app
+* The [text color](#text-color)
+* The [border styles and colors](#border-style) used throughout the app
 
-### Background color
+### Page background color
 
 To change the page background color for the whole app, edit the value of background-color for the `<body>` element in `index.html`:
 
 `index.html`
-
 ```html
-
 <style>
-
-    body {
-      ...
-      background-color: #FAFAFA;
-      ...
-    }
+	body {
+		...
+		background-color: #FAFAFA;
+		...
+	}
 </style>
 
 ```
 
-### **### 2. ****Font**
+### Font
 
 To change the font for the app headlines, article text and main title, edit the value of font-family for the `<body>` element in `index.html`:
 
 `index.html`
-
 ```html
-
 <style>
-
-    body {
-      ...
-      font-family: Georgia;
-      ...
-    }
+	body {
+		...
+		font-family: Georgia;
+		...
+	}
 </style>
-
 ```
 
-### **### 3. ****Text color**
+### Text color
 
 To change the text color for the app headlines, article text and main title, edit the value of color for the `<body>` element in `index.html`:
 
 `index.html`
-
 ```html
-
 <style>
-
-    body {
-      ...
-      color: #383838;
-      ...
-    }
+	body {
+		...
+		color: #383838;
+		...
+	}
 </style>
-
 ```
 
 This controls the font and text color inside the shadow trees of elements inside the `<body>` tags, since these properties are inherited.
 
-### **### 4. Border styles and colors**
+### Border styles and colors
 
 To change border styles and colors throughout the app, edit the value of `--app-border-style` and `--app-transparent-border-style` in `news-app.html`:
 
 `news-app.html`
-
 ```html
-
 <style>
-      :host {
-        ...
-       --app-border-style: 5px solid #FFF200; 
-
-        --app-transparent-border-style: 1px solid #FFF200;
-
-        …
-      }
+	:host {
+		...
+		--app-border-style: 5px solid #FFF200; 
+    	--app-transparent-border-style: 1px solid #FFF200;
+    	...
+	}
 </style>
-
 ```
+
+
 
 ## **## ****Tutorial: Modify the News theme**
 
