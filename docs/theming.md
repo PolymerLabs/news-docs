@@ -91,11 +91,11 @@ In this tutorial, we modify the look and feel of the News theme from [the defaul
 
 Before: {.caption}
 
-![News theme before modifications](image_0.png)
+![News theme before modifications](image_0.jpg)
 
 After: {.caption}
 
-![News theme after modifications](image_01.png)
+![News theme after modifications](image_01.jpg)
 
 We'll take these steps:
 
@@ -114,7 +114,7 @@ In `index.html`, change the document title and the value of the `app-title` prop
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>Your Site Title</title>
-  <link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
+  <link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.jpg">
   <meta name="theme-color" content="#000">
   <link rel="manifest" href="/manifest.json">
   ...
@@ -127,11 +127,11 @@ In `index.html`, change the document title and the value of the `app-title` prop
 
 Before: {.caption}
 
-![News site before modifying the title](image_1.png)
+![News site before modifying the title](image_1.jpg)
 
 After: {.caption}
 
-![News site after modifying the title](image_2.png)
+![News site after modifying the title](image_2.jpg)
 
 ### Modify the page background color and font family
 
@@ -154,11 +154,11 @@ In `index.html`, change the value of the background-color property to `#F1F3F2`.
 
 Before: {.caption}
 
-![Before modifying background color and font family](image_3.png)
+![Before modifying background color and font family](image_3.jpg)
 
 After: {.caption}
 
-![After modifying background color and font family](image_4.png)
+![After modifying background color and font family](image_4.jpg)
 
 ### Modify border and sticky nav bar styles
 
@@ -200,15 +200,15 @@ For more information on what these custom properties control, see the [Custom Pr
 
 Before: {.caption}
 
-![Before modifying border styles](image_5.png)
+![Before modifying border styles](image_5.jpg)
 
-![Before modifying sticky nav bar styles](image_6.png)
+![Before modifying sticky nav bar styles](image_6.jpg)
 
 After: {.caption}
 
-![After modifying border styles](image_7.png)
+![After modifying border styles](image_7.jpg)
 
-![After modifying sticky nav bar styles](image_8.png)
+![After modifying sticky nav bar styles](image_8.jpg)
 
 ### Modify sub-section headline styles in the list view
 
@@ -257,15 +257,15 @@ For more information on what this mixin controls, see the [Custom Properties Ref
 
 Before: {.caption}
 
-![Before modifying subsection headline styles](image_9.png)
+![Before modifying subsection headline styles](image_9.jpg)
 
 After: {.caption}
 
-![After modifying subsection headline styles](image_10.png)
+![After modifying subsection headline styles](image_10.jpg)
 
 The end result can be seen here: [https://polymer-news-theming.appspot.com](https://polymer-news-theming.appspot.com)
 
-![After modifying the news site theme](image_11.png)
+![After modifying the news site theme](image_11.jpg)
 
 ## Custom Properties Reference
 
@@ -290,11 +290,11 @@ Examples: {.caption}
 
 `--app-border-style: 1px solid #CCC;`
 
-![--app-border-style custom property default](app-border-style.png)
+![--app-border-style custom property default](app-border-style.jpg)
 
 `--app-border-style: 5px solid #FFF200;`
 
-![--app-border-style custom property modified](app-border-style-1.png)
+![--app-border-style custom property modified](app-border-style-1.jpg)
 
 
 ### `--app-transparent-border-style`
@@ -307,11 +307,11 @@ Examples: {.caption}
 
 `--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);`
 
-![--app-transparent-border-style custom property default](app-transparent-border-style.png)
+![--app-transparent-border-style custom property default](app-transparent-border-style.jpg)
 
 `--app-transparent-border-style: 5px solid #FFF200;`
 
-![--app-transparent-border-style custom property modified](app-transparent-border-style-1.png)
+![--app-transparent-border-style custom property modified](app-transparent-border-style-1.jpg)
 
 
 ### `--app-button-border-style`
@@ -331,11 +331,11 @@ Examples: {.caption}
 
 `--app-cover-text-color: #FFF;`
 
-![--app-cover-text-color default](app-cover-text-color.png)
+![--app-cover-text-color default](app-cover-text-color.jpg)
 
 `--app-cover-text-color: orange;`
 
-![--app-cover-text-color modified](app-cover-text-color-1.png)
+![--app-cover-text-color modified](app-cover-text-color-1.jpg)
 
 
 ### `--app-nav-background-color`
@@ -348,11 +348,11 @@ Examples: {.caption}
 
 `--app-nav-background-color: #E9E7E8;`
 
-![--app-nav-background-color default](app-nav-background-color.png)
+![--app-nav-background-color default](app-nav-background-color.jpg)
 
 `--app-nav-background-color: orange;`
 
-![--app-nav-background-color modified](app-nav-background-color-1.png)
+![--app-nav-background-color modified](app-nav-background-color-1.jpg)
 
 
 ### `--app-nav-text-color`
@@ -372,11 +372,11 @@ Examples: {.caption}
 
 `--app-nav-deselected-text-color: #888;`
 
-![--app-nav-deselected-text-color default](app-nav-deselected-text-color.png)
+![--app-nav-deselected-text-color default](app-nav-deselected-text-color.jpg)
 
 `--app-nav-deselected-text-color: blue;`
 
-![--app-nav-deselected-text-color modified](app-nav-deselected-text-color-1.png)
+![--app-nav-deselected-text-color modified](app-nav-deselected-text-color-1.jpg)
 
 
 ### `--app-nav-selected-background-color`
@@ -389,11 +389,11 @@ Examples: {.caption}
 
 `--app-nav-selected-background-color: #555;`
 
-![--app-nav-selected-background-color default](app-nav-selected-background-color.png)
+![--app-nav-selected-background-color default](app-nav-selected-background-color.jpg)
 
 `--app-nav-selected-background-color: #FFF200;`
 
-![--app-nav-selected-background-color modified](app-nav-selected-background-color-1.png)
+![--app-nav-selected-background-color modified](app-nav-selected-background-color-1.jpg)
 
 
 ### `--app-sub-section-headline`
@@ -439,7 +439,7 @@ For mobile, the equivalent value of `--app-cover-text-color` is hard-coded in `i
 
 With defaults:
 
-![--app-sub-section-headline defaults](image_12.png)
+![--app-sub-section-headline defaults](image_12.jpg)
 
 With these changes:
 ```css
@@ -451,7 +451,7 @@ With these changes:
   text-align: left;
 };
 ```
-![--app-sub-section-headline modified](image_13.png)
+![--app-sub-section-headline modified](image_13.jpg)
 
 ## **Reference: Hard-coded values**
 
