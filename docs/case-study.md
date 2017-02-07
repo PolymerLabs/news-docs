@@ -236,6 +236,27 @@ attached: function() {
 
 If `IntersectionObserver` isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
 
+# AMP version of the News app
+
+We built a [version of the News app ](https://github.com/PolymerLabs/news/tree/amp) for integration with AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In the AMP version of News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by AMP documents which can be loaded as standalone pages.
+
+The AMP project (Accelerated Mobile Pages)](https://www.ampproject.org/) supports adding an AMP document to a shadow root on your page. Here’s an example: https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js
+
+To support this in the AMP version of the News app, we created [the `<amp-viewer>` element](https://github.com/PolymerLabs/amp-viewer/). The `<amp-viewer>` element works similarly to an iframe. To load an AMP document inside the viewer, set its `src` attribute to the URL of the AMP document. Styles will be applied to the content, scoped by its shadow root.
+
+The element is written as a native custom element, and can be used independently of the News app. 
+
+ Here's how the `<amp-viewer>` element is used in News:
+
+`news-article.html`
+```html
+   <div class="container" fade-in$="[[!loading]]" hidden$="[[failure]]">
+      <article class="flex">
+        <amp-viewer id="ampViewer" src="[[_getArticleSrc(article.id)]]"></amp-viewer>
+      </article>
+```
+
+Note: the AMP version of the app does not support swiping between articles - doing so would require loading the title, image and author of the previous or next article. In the AMP version of News, that data is only loaded when the article content is loaded. It is not loaded with the list of articles.
 
 # More Resources
 
