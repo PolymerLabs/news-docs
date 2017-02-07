@@ -21,7 +21,7 @@ Categories are listed in the definition of the `<news-data>` element:
 		];
 ```
 		
-# <category>.json file specification
+# `<category>.json` file specification
 
 Each category must have a `.json` file named after it. The `<category>.json` file stores metadata for the articles in that category.
 
