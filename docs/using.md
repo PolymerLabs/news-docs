@@ -155,9 +155,9 @@ When you have a set of suitable files, add your HTML content and images to the r
 
 After: {.caption}
 
-<img src="image_4.jpg" alt="After adding HTML content and images" width="700px">
+<img src="image_4.jpg" alt="After adding HTML content and images: List view" width="700px">
 
-<img src="image_5.jpg" alt="After adding HTML content and images" width="700px">
+<img src="image_5.jpg" alt="After adding HTML content and images: Article view" width="700px">
 
 ## Step 4: Remove default/placeholder content
 
