@@ -18,7 +18,7 @@ Broad changes to the look and feel of the News app can be made with a few proper
 * The [page background color](#page-background-color) used throughout the app
 * The main [font](#font) used in the app
 * The [text color](#text-color)
-* The [border styles and colors](#border-style) used throughout the app
+* The [border styles and colors](#border-styles-and-colors) used throughout the app
 
 ### Page background color
 
