@@ -267,94 +267,122 @@ The end result can be seen here: [https://polymer-news-theming.appspot.com](http
 
 The following custom properties are defined in news-app.html:
 
-<table>
- <tr>
-    <td width="20%">Custom property</td>
-    <td width="60%">Description</td>
-    <td width="20%">Default</td>
-  </tr>
-  <tr>
-  <td><pre>--app-border-style</pre></td>
-    <td>
-	<p>The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.</p>
-	<p>Examples:</p>
-	<p><pre>--app-border-style: 1px solid #CCC;</pre></p>
-	<img src="app-border-style.png" alt="--app-border-style custom property default">
-	<p><pre>--app-border-style: 5px solid #FFF200;</pre></p>
-	<img src="app-border-style-1.png" alt="--app-border-style custom property modified">
-    </td>
-    <td><pre>1px solid #CCC</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-transparent-border-style</pre></td>
-    <td><p>The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)</p>
-	<p>Examples:</p>
-	<p><pre>--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);</pre></p>
-	<img src="app-transparent-border-style.png" alt="--app-transparent-border-style custom property default">
-	<p><pre>--app-transparent-border-style: 5px solid #FFF200;</pre></p>
-	<img src="app-transparent-border-style-1.png" alt="--app-transparent-border-style custom property modified">
-    </td>
-    <td><pre>1px solid rgba(255, 255, 255, 0.5)</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-button-border-style</pre></td>
-    <td><p>Width, style and color of borders around buttons. Used in <code>news-network-warning.html</code>.</p></td>
-    <td><pre>2px solid #222</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-cover-text-color</pre></td>
-    <td><p>Color of the text on the featured item in the list view. See [Notes](#notes) below</p>.
-	<p>Examples:</p>
-	<p><pre>--app-cover-text-color: #FFF;</pre></p>
-	<img src="app-cover-text-color.png" alt="--app-cover-text-color default">
-	<p><pre>--app-cover-text-color: orange;</pre></p>
-	<img src="app-cover-text-color-1.png" alt="--app-cover-text-color modified">
-	</td>
-    <td><pre>#FFF</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-nav-background-color</pre></td>
-    <td><p>Background of the sticky nav bar/mobile app drawer.</p>
-		<p>Examples:</p>
-		<p><pre>--app-nav-background-color: #E9E7E8;</pre></p>
-		<img src="app-nav-background-color.png" alt="--app-nav-background-color default">
-		<p><pre>--app-nav-background-color: orange;</pre></p>
-		<img src="app-nav-background-color-1.png" alt="--app-nav-background-color modified">
-    </td>
-    <td><pre>#222</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-nav-text-color</pre></td>
-    <td><p>Text color for the sticky nav bar/mobile app drawer.</p></td>
-    <td><pre>#FFF</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-nav-deselected-text-color</pre></td>
-    <td><p>Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
-	<p><pre>--app-nav-deselected-text-color: #888;</pre></p>
-	<img src="app-nav-deselected-text-color.png" alt="--app-nav-deselected-text-color default">
-	<p><pre>--app-nav-deselected-text-color: blue;</pre></p>
-	<img src="app-nav-deselected-text-color-1.png" alt="--app-nav-deselected-text-color modified">
-    </td>
-    <td><pre>#CCC</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-nav-selected-background-color</pre></td>
-    <td>
-		<p>Background color of current category in mobile app drawer.</p>
-		<p><pre>--app-nav-selected-background-color: #555;</pre></p>
-		<img src="app-nav-selected-background-color.png" alt="--app-nav-selected-background-color default">
-		<p><pre>--app-nav-selected-background-color: #FFF200;</pre></p>
-		<img src="app-nav-selected-background-color-1.png" alt="--app-nav-selected-background-color modified">
-	</td>
-    <td><pre>#555</pre></td>
-  </tr>
-  <tr>
-    <td><pre>--app-sub-section-headline</pre></td>
-    <td><p>Mixin for headlines of the sub-sections in the list view.</p></td>
-    <td>See [Notes](#notes).</td>
-  </tr>
-</table>
+
+### `--app-border-style`
+
+(Default: `1px solid #CCC`)
+
+The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.
+
+Examples:
+
+`--app-border-style: 1px solid #CCC;`
+
+![--app-border-style custom property default](app-border-style.png)
+
+`--app-border-style: 5px solid #FFF200;`
+
+![--app-border-style custom property modified](app-border-style-1.png)
+
+
+### `--app-transparent-border-style`
+
+(Default: `1px solid rgba(255, 255, 255, 0.5)`)
+
+The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)
+
+Examples:
+
+`--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);`
+
+![--app-transparent-border-style custom property default](app-transparent-border-style.png)
+	
+`--app-transparent-border-style: 5px solid #FFF200;`
+
+![--app-transparent-border-style custom property modified](app-transparent-border-style-1.png)
+
+
+### `--app-button-border-style`
+
+(Default: `2px solid #222`)
+
+Width, style and color of borders around buttons. Used in news-network-warning.html.
+
+
+### `--app-cover-text-color`
+
+(Default: `#FFF`)
+
+Color of the text on the featured item in the list view. See [Notes](#notes) below.
+
+Examples:
+	
+`--app-cover-text-color: #FFF;`
+
+![--app-cover-text-color default](app-cover-text-color.png)
+	
+`--app-cover-text-color: orange;`
+
+![--app-cover-text-color modified](app-cover-text-color-1.png)
+
+
+### `--app-nav-background-color`
+
+(Default: `#222`)
+
+Background of the sticky nav bar/mobile app drawer.
+
+Examples:
+		
+`--app-nav-background-color: #E9E7E8;`
+
+![--app-nav-background-color default](app-nav-background-color.png)
+
+`--app-nav-background-color: orange;`
+
+![--app-nav-background-color modified](app-nav-background-color-1.png)
+
+
+### `--app-nav-text-color`
+
+(Default: `#FFF`)
+
+Text color for the sticky nav bar/mobile app drawer.
+
+
+### `--app-nav-deselected-text-color`
+
+(Default: `#CCC`)
+
+Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
+	
+`--app-nav-deselected-text-color: #888;`
+
+![--app-nav-deselected-text-color default](app-nav-deselected-text-color.png)
+	
+`--app-nav-deselected-text-color: blue;`
+
+![--app-nav-deselected-text-color modified](app-nav-deselected-text-color-1.png)
+
+
+### `--app-nav-selected-background-color`
+
+(Default: `#555`)
+
+Background color of current category in mobile app drawer.
+		
+`--app-nav-selected-background-color: #555;`
+
+![--app-nav-selected-background-color default](app-nav-selected-background-color.png)
+		
+`--app-nav-selected-background-color: #FFF200;`
+
+![--app-nav-selected-background-color modified](app-nav-selected-background-color-1.png)
+
+
+### `--app-sub-section-headline`
+
+Mixin for headlines of the sub-sections in the list view. See [Notes](#notes) below.
 
 
 ### Notes
