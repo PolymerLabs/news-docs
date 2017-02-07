@@ -308,11 +308,11 @@ Examples: {.caption}
 
 `--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);`
 
-<img src="app-transparent-border-style.jpg" alt="--app-transparent-border-style custom property default" width="700px">
+<img src="app-transparent-border-style.jpg" alt="--app-transparent-border-style custom property default" width="400px">
 
 `--app-transparent-border-style: 5px solid #FFF200;`
 
-<img src="app-transparent-border-style-1.jpg" alt="--app-transparent-border-style custom property modified" width="700px">
+<img src="app-transparent-border-style-1.jpg" alt="--app-transparent-border-style custom property modified" width="400px">
 
 ### `--app-button-border-style`
 
@@ -331,11 +331,11 @@ Examples: {.caption}
 
 `--app-cover-text-color: #FFF;`
 
-<img src="app-cover-text-color.jpg" alt="--app-cover-text-color default" width="700px">
+<img src="app-cover-text-color.jpg" alt="--app-cover-text-color default" width="400px">
 
 `--app-cover-text-color: orange;`
 
-<img src="app-cover-text-color-1.jpg" alt="--app-cover-text-color modified" width="700px">
+<img src="app-cover-text-color-1.jpg" alt="--app-cover-text-color modified" width="400px">
 
 ### `--app-nav-background-color`
 
@@ -386,11 +386,11 @@ Examples: {.caption}
 
 `--app-nav-selected-background-color: #555;`
 
-<img src="app-nav-selected-background-color.jpg" alt="--app-nav-selected-background-color default" width="300px">
+<img src="app-nav-selected-background-color.jpg" alt="--app-nav-selected-background-color default" width="200px">
 
 `--app-nav-selected-background-color: #FFF200;`
 
-<img src="app-nav-selected-background-color-1.jpg" alt="--app-nav-selected-background-color modified" width="300px">
+<img src="app-nav-selected-background-color-1.jpg" alt="--app-nav-selected-background-color modified" width="200px">
 
 ### `--app-sub-section-headline`
 
