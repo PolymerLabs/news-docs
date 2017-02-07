@@ -385,11 +385,11 @@ Examples: {.caption}
 
 `--app-nav-selected-background-color: #555;`
 
-<img src="app-nav-selected-background-color.jpg" alt="--app-nav-selected-background-color default" width="700px">
+<img src="app-nav-selected-background-color.jpg" alt="--app-nav-selected-background-color default" width="300px">
 
 `--app-nav-selected-background-color: #FFF200;`
 
-<img src="app-nav-selected-background-color-1.jpg" alt="--app-nav-selected-background-color modified" width="700px">
+<img src="app-nav-selected-background-color-1.jpg" alt="--app-nav-selected-background-color modified" width="300px">
 
 ### `--app-sub-section-headline`
 
