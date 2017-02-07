@@ -166,4 +166,4 @@ Example:
 
 `"contentLength": 6746`
 
-<img src="virtual.png" alt="Example of read time" width="500px">
+<img src="virtual.png" alt="Example of read time" width="300px">
