@@ -152,7 +152,7 @@ Example:
 
 `"summary": "Virtual Art Sessions lets you observe six world-renowned artists as they develop blank canvases into beautiful works of art using Tilt Brush."`
 
-<img src="virtual.png" alt="Example of summary snippet" width="400px">
+<img src="it-takes-teacher.png" alt="Example of summary snippet" width="400px">
 
 ### `contentLength`
 
@@ -166,4 +166,4 @@ Example:
 
 `"contentLength": 6746`
 
-<img src="it-takes-teacher.png" alt="Example of read time" width="500px">
+<img src="virtual.png" alt="Example of read time" width="500px">
