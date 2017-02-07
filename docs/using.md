@@ -36,11 +36,11 @@ Also, update the value of the app-title property and the contents of <news-app>:
 
 Before {.caption}
 
-![image alt text](image_0.jpg)
+<img src="image_0.jpg" alt="Before updating the app title" width="700px">
 
 After {.caption}
 
-![image alt text](image_1.jpg)
+<img src="image_1.jpg" alt="After updating the app title" width="700px">
 
 ## Step 2: Set up categories for your content
 
@@ -126,11 +126,11 @@ this._fetch('http://your/path/here/' + category.name + '.json',
 
 Before: {.caption}
 
-![image alt text](image_2.jpg)
+<img src="image_2.jpg" alt="Before creating .json files" width="700px">
 
 After: {.caption}
 
-![image alt text](image_3.jpg)
+<img src="image_3.jpg" alt="After creating .json files" width="700px">
 
 ## Step 3: Add your html files and images
 
@@ -155,9 +155,9 @@ When you have a set of suitable files, add your HTML content and images to the r
 
 After: {.caption}
 
-![image alt text](image_4.jpg)
+<img src="image_4.jpg" alt="After adding HTML content and images" width="700px">
 
-![image alt text](image_5.jpg)
+<img src="image_5.jpg" alt="After adding HTML content and images" width="700px">
 
 ## Step 4: Remove default/placeholder content
 
