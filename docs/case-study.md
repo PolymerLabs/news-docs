@@ -11,7 +11,7 @@ News is a full-featured Progressive Web App (PWA) demo built using the Toolbox. 
 This case study shows how News uses the principles of Progressive Web App (PWA) design to deliver a great
 user experience.
 
-## App Structure
+# App Structure
 
 Like other PWAs, News is designed with an [application shell architecture](https://developers.google.com/web/fundamentals/architecture/app-shell). The app shell element, `<news-app>`, contains the main framework for News. Here's the basic structure:
 
@@ -37,7 +37,7 @@ Like other PWAs, News is designed with an [application shell architecture](https
   </div>
 </div>
 
-## Views and routing
+# Views and routing
 
 Views in the News app use the same implementation as the Shop app. [See the Shop app case study for more information on views and routing](https://www.polymer-project.org/1.0/toolbox/case-study#views).
 
@@ -60,7 +60,7 @@ the cached content is displayed.
 
 -   [`<app-route>` API reference](https://elements.polymer-project.org/elements/app-route)
 
-## Routing and Data Binding in the News App
+# Routing and Data Binding in the News App
 
 Routing and data bindings work together in the News app to retrieve and display the data relevant to the URL that the user selects.
 
@@ -75,7 +75,7 @@ The app shell element, `<news-app>`, acts as the host, while `<news-data>`, `<ne
 * The list of articles in the current category (`category`)
 * The raw HTML for the current article (`article`)
 
-### Part 1: Routing
+## Part 1: Routing
 
 `categoryName` and `articleId` are set by the routing logic in the view elements (`<news-list>` and `<news-article>`). The active view element processes the user's selected URL in order to set `categoryName` or `articleId`. The properties are two-way bound between the view elements and the app shell, so they are "pushed" up to the app shell.
 
@@ -122,7 +122,7 @@ Two-way data binding in the host element ensures that the data is passed back to
 </news-list>
 ```
 
-### Part 2: Data retrieval
+## Part 2: Data retrieval
 
 `categoryName` and `articleId` are one-way bound from `<news-app>` to `<news-data>`:
 
@@ -154,7 +154,7 @@ The `category` and `article` properties are two-way bound from `<news-app>` to `
    ></news-data>
 ```        
 
-### Part 3: Data display
+## Part 3: Data display
 
 `category` and `article` are one-way bound from `<news-app>` to the elements that display this content (`<news-list>` and `<news-article>`. When these properties are updated in `<news-app>`, triggered by their change of state in `<news-data>`, they flow down to `<news-list>` or `<news-article>`, depending on routing.
 
@@ -185,7 +185,7 @@ This sequence diagram shows the interactions between the elements of the News ap
   </div>
 </div>
 
-## SEO and Social Sharing
+# SEO and Social Sharing
 
 A small piece of server code in the News app checks the requesting user agent whenever the user navigates to a URL in your app. If the user agent is a browser, the application returns index.html and the app's routing logic is executed to display the requested content.
 
@@ -210,11 +210,11 @@ class ArticlePage(webapp2.RequestHandler):
       self.response.out.write(open('index.html').read())
 ```
 
-## Resource URLs
+# Resource URLs
 
 Resource URLs, like `/bower_components/`, `/data/` and `/src/` are served as static files. These static URLs are defined in `app.yaml`. These URLs are used internally by the app to load components and data.
 
-## Displaying Ads
+# Displaying Ads
 
 The News app attempts to display ads, without blocking a fast first paint.
 
@@ -237,7 +237,7 @@ attached: function() {
 If `IntersectionObserver` isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
 
 
-## More Resources
+# More Resources
 
 If you want to look at the News app in more detail, you can find the full source
 on GitHub:
