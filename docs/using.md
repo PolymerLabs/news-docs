@@ -4,15 +4,17 @@ title: "Using the News app"
 
 <!-- toc -->
 
+You can download the News source code from its [GitHub repository](https://github.com/PolymerLabs/news). To build the News app and modify it locally, follow the steps in the README.
+
 This tutorial will quickly guide you through plugging your own content into the News app and publishing your site.
 
 To follow it, you’ll need a set of articles in html files, along with all of the images you need to display or link to.
 
 Notes:
 
-* This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on Theming and styling the News app.
+* This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on [Theming and styling the News app](theming.md).
 
-* For information on how the News app was implemented, see the Case Study.
+* For information on how the News app was implemented, see the [Case Study](case-study.md).
 
 ## Step 1: Change the name of your site
 
