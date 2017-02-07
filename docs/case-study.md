@@ -6,12 +6,12 @@ title: "Case study: the News app"
 
 News is a full-featured Progressive Web App (PWA) demo built using the Toolbox. You can try it out here:
 
-<a href="https://news.polymer-project.org/" class="blue-button">Launch News demo</a>
+<a href="https://news.polymer-project.org/" class="docs-button">Launch News demo</a>
 
 This case study shows how News uses the principles of Progressive Web App (PWA) design to deliver a great
 user experience.
 
-# App Structure
+## App Structure
 
 Like other PWAs, News is designed with an [application shell architecture](https://developers.google.com/web/fundamentals/architecture/app-shell). The app shell element, `<news-app>`, contains the main framework for News. Here's the basic structure:
 
@@ -37,7 +37,7 @@ Like other PWAs, News is designed with an [application shell architecture](https
   </div>
 </div>
 
-# Views and routing
+## Views and routing
 
 Views in the News app use the same implementation as the Shop app. [See the Shop app case study for more information on views and routing](https://www.polymer-project.org/1.0/toolbox/case-study#views).
 
@@ -49,10 +49,10 @@ There are two main views in the News app. The `<news-list>` element displays a l
 
 `news-list.html` { .caption }
 ```html
-    <news-network-warning
-        hidden$="[[!failure]]"
-        offline="[[offline]]"
-        on-try-reconnect="_tryReconnect"></news-network-warning>
+<news-network-warning
+    hidden$="[[!failure]]"
+    offline="[[offline]]"
+    on-try-reconnect="_tryReconnect"></news-network-warning>
 ```
 
 If the user is offline but category data is cached and ServiceWorker is installed,
@@ -60,7 +60,7 @@ the cached content is displayed.
 
 -   [`<app-route>` API reference](https://elements.polymer-project.org/elements/app-route)
 
-# Routing and Data Binding in the News App
+## Routing and Data Binding in the News App
 
 Routing and data bindings work together in the News app to retrieve and display the data relevant to the URL that the user selects.
 
@@ -75,7 +75,7 @@ The app shell element, `<news-app>`, acts as the host, while `<news-data>`, `<ne
 * The list of articles in the current category (`category`)
 * The raw HTML for the current article (`article`)
 
-## Part 1: Routing
+### Part 1: Routing
 
 `categoryName` and `articleId` are set by the routing logic in the view elements (`<news-list>` and `<news-article>`). The active view element processes the user's selected URL in order to set `categoryName` or `articleId`. The properties are two-way bound between the view elements and the app shell, so they are "pushed" up to the app shell.
 
@@ -85,12 +85,12 @@ The top-level `<app-route>` element in `<news-app>` consumes the first part of t
 
 `news-app.html`
 ```html
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+<app-location route="{{route}}"></app-location>
+<app-route
+    route="{{route}}"
+    pattern="/:page"
+    data="{{routeData}}"
+    tail="{{subroute}}"></app-route>
 ```
 
 The `<iron-pages>` element in `<news-app>` displays the `<news-list>` element (because `page` == "list"):
@@ -104,10 +104,10 @@ The `<app-route>` element in `<news-list>` consumes the next part of the URL (`/
 
 `news-list.html`
 ```html
-   <app-route
-        route="[[route]]"
-        pattern="/:category"
-        data="{{_routeData}}"></app-route>
+<app-route
+    route="[[route]]"
+    pattern="/:category"
+    data="{{_routeData}}"></app-route>
 ```
 
 Two-way data binding in the host element ensures that the data is passed back to `<news-app>`:
@@ -122,7 +122,7 @@ Two-way data binding in the host element ensures that the data is passed back to
 </news-list>
 ```
 
-## Part 2: Data retrieval
+### Part 2: Data retrieval
 
 `categoryName` and `articleId` are one-way bound from `<news-app>` to `<news-data>`:
 
@@ -145,16 +145,16 @@ The `category` and `article` properties are two-way bound from `<news-app>` to `
 
 `news-app.html`
 ```html
-   <news-data
-     ...
-        category="{{category}}"
-     ...
-        article="{{article}}"
-     ...
-   ></news-data>
-```        
+<news-data
+  ...
+  category="{{category}}"
+  ...
+  article="{{article}}"
+  ...
+  ></news-data>
+```
 
-## Part 3: Data display
+### Part 3: Data display
 
 `category` and `article` are one-way bound from `<news-app>` to the elements that display this content (`<news-list>` and `<news-article>`. When these properties are updated in `<news-app>`, triggered by their change of state in `<news-data>`, they flow down to `<news-list>` or `<news-article>`, depending on routing.
 
@@ -185,7 +185,7 @@ This sequence diagram shows the interactions between the elements of the News ap
   </div>
 </div>
 
-# SEO and Social Sharing
+## SEO and Social Sharing
 
 A small piece of server code in the News app checks the requesting user agent whenever the user navigates to a URL in your app. If the user agent is a browser, the application returns index.html and the app's routing logic is executed to display the requested content.
 
@@ -210,11 +210,11 @@ class ArticlePage(webapp2.RequestHandler):
       self.response.out.write(open('index.html').read())
 ```
 
-# Resource URLs
+## Resource URLs
 
 Resource URLs, like `/bower_components/`, `/data/` and `/src/` are served as static files. These static URLs are defined in `app.yaml`. These URLs are used internally by the app to load components and data.
 
-# Displaying Ads
+## Displaying Ads
 
 The News app attempts to display ads, without blocking a fast first paint.
 
@@ -223,20 +223,20 @@ The <news-iframe> element uses [`IntersectionObserver`](https://developer.mozill
 `news-iframe.html`
 ```javascript
 attached: function() {
-        if ('IntersectionObserver' in window) {
-          this._io = new IntersectionObserver(this._createIframe.bind(this));
-          this._io.observe(this);
-        } else {
-          // Intersection Observer is not available, so just create the iframe
-          // after a bit of a delay.
-          window.setTimeout(this._createIframe.bind(this), 100);
-        }
-      },
+  if ('IntersectionObserver' in window) {
+    this._io = new IntersectionObserver(this._createIframe.bind(this));
+    this._io.observe(this);
+  } else {
+    // Intersection Observer is not available, so just create the iframe
+    // after a bit of a delay.
+    window.setTimeout(this._createIframe.bind(this), 100);
+  }
+},
 ```
 
 If `IntersectionObserver` isn't available, the application briefly delays displaying the ad to let the rest of the page load first.
 
-# AMP version of the News app
+## AMP version of the News app
 
 We built a [version of the News app](https://github.com/PolymerLabs/news/tree/amp) for integration with [AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In the AMP version of News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by AMP documents which can be loaded as standalone pages.
 
@@ -244,21 +244,21 @@ The AMP project supports adding an AMP document to a shadow root on your page. H
 
 To support this in the AMP version of the News app, we created [the `<amp-viewer>` element](https://github.com/PolymerLabs/amp-viewer/). The `<amp-viewer>` element works similarly to an iframe. To load an AMP document inside the viewer, set its `src` attribute to the URL of the AMP document. Styles will be applied to the content, scoped by its shadow root.
 
-The element is written as a native custom element, and can be used independently of the News app. 
+The element is written as a native custom element, and can be used independently of the News app.
 
  Here's how the `<amp-viewer>` element is used in News:
 
 `news-article.html`
 ```html
-   <div class="container" fade-in$="[[!loading]]" hidden$="[[failure]]">
-      <article class="flex">
-        <amp-viewer id="ampViewer" src="[[_getArticleSrc(article.id)]]"></amp-viewer>
-      </article>
+<div class="container" fade-in$="[[!loading]]" hidden$="[[failure]]">
+  <article class="flex">
+    <amp-viewer id="ampViewer" src="[[_getArticleSrc(article.id)]]"></amp-viewer>
+  </article>
 ```
 
 Note: the AMP version of the app does not support swiping between articles - doing so would require loading the title, image and author of the previous or next article. In the AMP version of News, that data is only loaded when the article content is loaded. It is not loaded with the list of articles.
 
-# More Resources
+## More Resources
 
 If you want to look at the News app in more detail, you can find the full source
 on GitHub:

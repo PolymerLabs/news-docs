@@ -26,7 +26,7 @@ Choose a name for your site, and update it in index.html. Change the document ti
 Also, update the value of the app-title property and the contents of <news-app>:
 
 `index.html`
-```
+```html
 <body>
   ...
   <news-app unresolved app-title="The Lorem Ipsum Ovserver">The Lorem Ipsum Observer</news-app>
@@ -34,11 +34,11 @@ Also, update the value of the app-title property and the contents of <news-app>:
 </body>
 ```
 
-Before:
+Before {.caption}
 
 ![image alt text](image_0.png)
 
-After:
+After {.caption}
 
 ![image alt text](image_1.png)
 
@@ -46,7 +46,8 @@ After:
 
 ### 2.1 In news-data.html, replace the default categories list with your own.
 
-`news-data.html`: Before
+`news-data.html`: Before {.caption}
+
 ```html
 <dom-module id="news-data">
   <script>
@@ -61,8 +62,8 @@ After:
     ];
 ```
 
-`news-data.html`: After
-```
+`news-data.html`: After {.caption}
+```html
 <dom-module id="news-data">
   <script>
   (function() {
@@ -77,7 +78,7 @@ After:
 
 In news-app.html, update the default route to one of your categories:
 
-`news-app.html`: Before
+`news-app.html`: Before {.caption}
 ```
 _routePageChanged: function(page) {
   if (!page) {
@@ -87,8 +88,8 @@ _routePageChanged: function(page) {
   }
 ```
 
-`news-app.html`: After
-```    
+`news-app.html`: After {.caption}
+```
 _routePageChanged: function(page) {
   if (!page) {
     // set default route if route path is empty
@@ -105,29 +106,29 @@ For each category, create a `.json` file containing a list of the articles and a
 
 Place the <category>.json files in the /data folder; or modify news-data.html to point to the location of your <category>.json files.
 
-`news-data.html`: Before
+`news-data.html`: Before {.caption}
 ```
 this._fetch('/data/' + category.name + '.json',
-          function(response) {
-            this.set('category.items', this._parseCategoryItems(response));
-          }.bind(this),
-          attempts || 1 /* attempts */);
+  function(response) {
+    this.set('category.items', this._parseCategoryItems(response));
+  }.bind(this),
+  attempts || 1 /* attempts */);
 ```
 
-`news-data.html`: After
+`news-data.html`: After {.caption}
 ```
 this._fetch('http://your/path/here/' + category.name + '.json',
-          function(response) {
-            this.set('category.items', this._parseCategoryItems(response));
-          }.bind(this),
-          attempts || 1 /* attempts */);
+  function(response) {
+    this.set('category.items', this._parseCategoryItems(response));
+  }.bind(this),
+  attempts || 1 /* attempts */);
 ```
 
-Before:
+Before: {.caption}
 
 ![image alt text](image_2.png)
 
-After:
+After: {.caption}
 
 ![image alt text](image_3.png)
 
@@ -136,15 +137,15 @@ After:
 News articles are regular HTML files, and should be valid. These files are served directly for indexing by search bots - see the Case Study for more information.
 
 Article content must be in an element with a `.content` class:
-
+```
 <body>
   <div class="content">
-      <div>
-      ...
-      </div>
+    <div>
+    ...
+    </div>
   </div>
 </body>
-
+```
 This is the content that will be displayed by the News app.
 
 When you have a set of suitable files, add your HTML content and images to the relevant folders.
@@ -152,7 +153,7 @@ When you have a set of suitable files, add your HTML content and images to the r
 * Put your html files in `data/articles`.
 * Put your images in `data/images`.
 
-After:
+After: {.caption}
 
 ![image alt text](image_4.png)
 

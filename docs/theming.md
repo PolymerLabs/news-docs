@@ -27,11 +27,11 @@ To change the page background color for the whole app, edit the value of backgro
 `index.html`
 ```html
 <style>
-	body {
-		...
-		background-color: #FAFAFA;
-		...
-	}
+  body {
+    ...
+    background-color: #FAFAFA;
+    ...
+  }
 </style>
 
 ```
@@ -43,11 +43,11 @@ To change the font for the app headlines, article text and main title, edit the 
 `index.html`
 ```html
 <style>
-	body {
-		...
-		font-family: Georgia;
-		...
-	}
+  body {
+    ...
+    font-family: Georgia;
+    ...
+  }
 </style>
 ```
 
@@ -58,11 +58,11 @@ To change the text color for the app headlines, article text and main title, edi
 `index.html`
 ```html
 <style>
-	body {
-		...
-		color: #383838;
-		...
-	}
+  body {
+    ...
+    color: #383838;
+    ...
+  }
 </style>
 ```
 
@@ -75,12 +75,12 @@ To change border styles and colors throughout the app, edit the value of `--app-
 `news-app.html`
 ```html
 <style>
-	:host {
-		...
-		--app-border-style: 5px solid #FFF200;
-    	--app-transparent-border-style: 1px solid #FFF200;
-    	...
-	}
+  :host {
+    ...
+    --app-border-style: 5px solid #FFF200;
+    --app-transparent-border-style: 1px solid #FFF200;
+    ...
+  }
 </style>
 ```
 
@@ -89,11 +89,11 @@ To change border styles and colors throughout the app, edit the value of `--app-
 
 In this tutorial, we modify the look and feel of the News theme from [the defaults](https://polymer-news.appspot.com/) to match [this design](https://polymer-news-theming.appspot.com).
 
-Before:
+Before: {.caption}
 
 ![News theme before modifications](image_0.png)
 
-After:
+After: {.caption}
 
 ![News theme after modifications](image_01.png)
 
@@ -111,25 +111,25 @@ In `index.html`, change the document title and the value of the `app-title` prop
 `index.html`
 ```html
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-	<title>Your Site Title</title>
-	<link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
-	<meta name="theme-color" content="#000">
-	<link rel="manifest" href="/manifest.json">
-	...
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Your Site Title</title>
+  <link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
+  <meta name="theme-color" content="#000">
+  <link rel="manifest" href="/manifest.json">
+  ...
 </head>
 ...
 <body>
-	<news-app unresolved app-title="Your Site Title">Your Site Title</news-app>
+  <news-app unresolved app-title="Your Site Title">Your Site Title</news-app>
 </body>
 ```
 
-Before:
+Before: {.caption}
 
 ![News site before modifying the title](image_1.png)
 
-After:
+After: {.caption}
 
 ![News site after modifying the title](image_2.png)
 
@@ -140,23 +140,23 @@ In `index.html`, change the value of the background-color property to `#F1F3F2`.
 `index.html`
 ```html
 <style>
-	body {
-		margin: 0;
-		background-color: #F1F3F2;
-		color: #383838;
-		font-family: sans-serif;
-		min-height: 100vh;
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	}
-	...
+  body {
+    margin: 0;
+    background-color: #F1F3F2;
+    color: #383838;
+    font-family: sans-serif;
+    min-height: 100vh;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  ...
 </style>
 ```
 
-Before:
+Before: {.caption}
 
 ![Before modifying background color and font family](image_3.png)
 
-After:
+After: {.caption}
 
 ![After modifying background color and font family](image_4.png)
 
@@ -164,45 +164,47 @@ After:
 
 To modify border and sticky nav bar styles, we'll edit the values of the custom properties that control them. These properties are stored in `news-app.html`. Edit this file as follows:
 
-`news-app.html`: Before
+`news-app.html`: Before {.caption}
+
 ```html
 <style>
-	--app-border-style: 1px solid #CCC;
-	--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);
-	--app-button-border-style: 2px solid #222;
-	--app-cover-text-color: #FFF;
-	--app-nav-background-color: #222;
-	--app-nav-text-color: #FFF;
-	--app-nav-deselected-text-color: #CCC;
-	--app-nav-selected-background-color: #555;
-	...
+  --app-border-style: 1px solid #CCC;
+  --app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);
+  --app-button-border-style: 2px solid #222;
+  --app-cover-text-color: #FFF;
+  --app-nav-background-color: #222;
+  --app-nav-text-color: #FFF;
+  --app-nav-deselected-text-color: #CCC;
+  --app-nav-selected-background-color: #555;
+  ...
 </style>
 ```
 
-`news-app.html`: After
+`news-app.html`: After {.caption}
+
 ```html
 <style>
-	--app-border-style: 5px solid #FFF200;
-	--app-transparent-border-style: 1px solid #FFF200;
-	--app-button-border-style: 2px solid #FFF200;
-	--app-cover-text-color: #FFF;
-	--app-nav-background-color: #E9E7E8;
-	--app-nav-text-color: #383838;
-	--app-nav-deselected-text-color: #888;
-	--app-nav-selected-background-color: #FFF200;
-	...
+  --app-border-style: 5px solid #FFF200;
+  --app-transparent-border-style: 1px solid #FFF200;
+  --app-button-border-style: 2px solid #FFF200;
+  --app-cover-text-color: #FFF;
+  --app-nav-background-color: #E9E7E8;
+  --app-nav-text-color: #383838;
+  --app-nav-deselected-text-color: #888;
+  --app-nav-selected-background-color: #FFF200;
+  ...
 </style>
 ```
 
 For more information on what these custom properties control, see the [Custom Properties Reference](#custom-properties-reference) below.
 
-Before:
+Before: {.caption}
 
 ![Before modifying border styles](image_5.png)
 
 ![Before modifying sticky nav bar styles](image_6.png)
 
-After:
+After: {.caption}
 
 ![After modifying border styles](image_7.png)
 
@@ -216,46 +218,48 @@ In `news-app.html`, update the `--app-sub-section-headline` mixin.
 * Change the value of `font-size` to `24px`.
 * Add two properties to this mixin: `font-family: "Georgia"` and `font-style: italic`.
 
-`news-app.html`: Before
+`news-app.html`: Before {.caption}
+
 ```html
 <style>
-	...
-	--app-sub-section-headline: {
-		border-top: var(--app-border-style);
-		border-bottom: var(--app-border-style);
-		font-size: 13px;
-		padding: 8px;
- 		text-align: center;
-	};
- 	...
- </style>
+  ...
+  --app-sub-section-headline: {
+    border-top: var(--app-border-style);
+    border-bottom: var(--app-border-style);
+    font-size: 13px;
+    padding: 8px;
+    text-align: center;
+  };
+  ...
+</style>
  ```
 
-`news-app.html`: After
+`news-app.html`: After {.caption}
+
 ```html
 <style>
-	...
- 	--app-sub-section-headline: {
-		border-top: var(--app-border-style);
-		border-bottom: var(--app-border-style);
-		font-size: 50px;
-		padding: 8px;
-		text-align: center;
-		font-family: "Georgia";
-		font-size: 24px;
-		font-style: italic;
-	};
-	...
+  ...
+  --app-sub-section-headline: {
+    border-top: var(--app-border-style);
+    border-bottom: var(--app-border-style);
+    font-size: 50px;
+    padding: 8px;
+    text-align: center;
+    font-family: "Georgia";
+    font-size: 24px;
+    font-style: italic;
+  };
+  ...
 </style>
 ```
 
 For more information on what this mixin controls, see the [Custom Properties Reference](#custom-properties-reference).
 
-Before:
+Before: {.caption}
 
 ![Before modifying subsection headline styles](image_9.png)
 
-After:
+After: {.caption}
 
 ![After modifying subsection headline styles](image_10.png)
 
@@ -267,14 +271,22 @@ The end result can be seen here: [https://polymer-news-theming.appspot.com](http
 
 The following custom properties are defined in news-app.html:
 
+* [--app-border-style](#app-border-style)
+* [--app-transparent-border-style](#app-transparent-border-style)
+* [--app-button-border-style](#app-button-border-style)
+* [--app-cover-text-color](#app-cover-text-color)
+* [--app-nav-background-color](#app-nav-background-color)
+* [--app-nav-text-color](#app-nav-text-color)
+* [--app-nav-deselected-text-color](#app-nav-deselected-text-color)
+* [--app-nav-selected-background-color](#app-nav-selected-background-color)
 
 ### `--app-border-style`
 
-(Default: `1px solid #CCC`)
+(Default: `1px solid #CCC`) {.caption}
 
 The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.
 
-Examples:
+Examples: {.caption}
 
 `--app-border-style: 1px solid #CCC;`
 
@@ -287,16 +299,16 @@ Examples:
 
 ### `--app-transparent-border-style`
 
-(Default: `1px solid rgba(255, 255, 255, 0.5)`)
+(Default: `1px solid rgba(255, 255, 255, 0.5)`) {.caption}
 
 The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)
 
-Examples:
+Examples: {.caption}
 
 `--app-transparent-border-style: 1px solid rgba(255, 255, 255, 0.5);`
 
 ![--app-transparent-border-style custom property default](app-transparent-border-style.png)
-	
+
 `--app-transparent-border-style: 5px solid #FFF200;`
 
 ![--app-transparent-border-style custom property modified](app-transparent-border-style-1.png)
@@ -304,23 +316,23 @@ Examples:
 
 ### `--app-button-border-style`
 
-(Default: `2px solid #222`)
+(Default: `2px solid #222`) {.caption}
 
 Width, style and color of borders around buttons. Used in news-network-warning.html.
 
 
 ### `--app-cover-text-color`
 
-(Default: `#FFF`)
+(Default: `#FFF`) {.caption}
 
 Color of the text on the featured item in the list view. See [Notes](#notes) below.
 
-Examples:
-	
+Examples: {.caption}
+
 `--app-cover-text-color: #FFF;`
 
 ![--app-cover-text-color default](app-cover-text-color.png)
-	
+
 `--app-cover-text-color: orange;`
 
 ![--app-cover-text-color modified](app-cover-text-color-1.png)
@@ -328,12 +340,12 @@ Examples:
 
 ### `--app-nav-background-color`
 
-(Default: `#222`)
+(Default: `#222`) {.caption}
 
 Background of the sticky nav bar/mobile app drawer.
 
-Examples:
-		
+Examples: {.caption}
+
 `--app-nav-background-color: #E9E7E8;`
 
 ![--app-nav-background-color default](app-nav-background-color.png)
@@ -345,21 +357,21 @@ Examples:
 
 ### `--app-nav-text-color`
 
-(Default: `#FFF`)
+(Default: `#FFF`) {.caption}
 
 Text color for the sticky nav bar/mobile app drawer.
 
 
 ### `--app-nav-deselected-text-color`
 
-(Default: `#CCC`)
+(Default: `#CCC`) {.caption}
 
 Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
-	
+
 `--app-nav-deselected-text-color: #888;`
 
 ![--app-nav-deselected-text-color default](app-nav-deselected-text-color.png)
-	
+
 `--app-nav-deselected-text-color: blue;`
 
 ![--app-nav-deselected-text-color modified](app-nav-deselected-text-color-1.png)
@@ -367,14 +379,14 @@ Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
 
 ### `--app-nav-selected-background-color`
 
-(Default: `#555`)
+(Default: `#555`) {.caption}
 
 Background color of current category in mobile app drawer.
-		
+
 `--app-nav-selected-background-color: #555;`
 
 ![--app-nav-selected-background-color default](app-nav-selected-background-color.png)
-		
+
 `--app-nav-selected-background-color: #FFF200;`
 
 ![--app-nav-selected-background-color modified](app-nav-selected-background-color-1.png)
@@ -392,33 +404,33 @@ Mixin for headlines of the sub-sections in the list view. See [Notes](#notes) be
 For mobile, the equivalent value of `--app-cover-text-color` is hard-coded in `index.html` to allow for browsers that don't support custom properties:
 
 `index.html`
-```html
+```css
 /* mobile */
-    @media (max-width: 767px) {
-      body {
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 15%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.7) 48%, rgba(0,0,0,1) 60%);
-        background-repeat: no-repeat;
-        background-size: 100% 100vh;
-      }
-      news-app[unresolved] {
-        height: 22px;
-        padding-top: 21px;
-        font-size: 20px;
-        color: #FFF; /* --app-cover-text-color */
-      }
-    }
+@media (max-width: 767px) {
+  body {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 15%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.7) 48%, rgba(0,0,0,1) 60%);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+  }
+  news-app[unresolved] {
+    height: 22px;
+    padding-top: 21px;
+    font-size: 20px;
+    color: #FFF; /* --app-cover-text-color */
+  }
+}
 ```
 
 #### --app-sub-section-headline default values
 `news.app.html`
-```html
+```css
 --app-sub-section-headline: {
-          border-top: var(--app-border-style);
-          border-bottom: var(--app-border-style);
-          font-size: 13px;
-          padding: 8px;
-          text-align: center;
-        };
+  border-top: var(--app-border-style);
+  border-bottom: var(--app-border-style);
+  font-size: 13px;
+  padding: 8px;
+  text-align: center;
+};
 ```
 
 With defaults:
@@ -426,14 +438,14 @@ With defaults:
 ![--app-sub-section-headline defaults](image_12.png)
 
 With these changes:
-```html
+```css
 --app-sub-section-headline: {
-          border-top: none;
-          border-bottom: none;
-          font-size: 30px;
-          padding: 8px;
-          text-align: left;
-        };
+  border-top: none;
+  border-bottom: none;
+  font-size: 30px;
+  padding: 8px;
+  text-align: left;
+};
 ```
 ![--app-sub-section-headline modified](image_13.png)
 
@@ -444,14 +456,14 @@ To change the page background color, margin, font, and text color for the app, e
 `index.html`
 ```html
 <style>
-    body {
-      margin: 0;
-      background-color: #FAFAFA;
-      color: #383838;
-      font-family: Georgia;
-      min-height: 100vh; /* Pushes footer content below the fold during initial page load to avoid FOUC */
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Overrides the iOS default transparent grey highlight when tapping a link */
-    }
-    ...
+  body {
+    margin: 0;
+    background-color: #FAFAFA;
+    color: #383838;
+    font-family: Georgia;
+    min-height: 100vh; /* Pushes footer content below the fold during initial page load to avoid FOUC */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Overrides the iOS default transparent grey highlight when tapping a link */
+  }
+  ...
 </style>
 ```
