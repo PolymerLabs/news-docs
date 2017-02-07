@@ -36,11 +36,11 @@ Also, update the value of the app-title property and the contents of <news-app>:
 
 Before {.caption}
 
-![image alt text](image_0.png)
+![image alt text](image_0.jpg)
 
 After {.caption}
 
-![image alt text](image_1.png)
+![image alt text](image_1.jpg)
 
 ## Step 2: Set up categories for your content
 
@@ -126,11 +126,11 @@ this._fetch('http://your/path/here/' + category.name + '.json',
 
 Before: {.caption}
 
-![image alt text](image_2.png)
+![image alt text](image_2.jpg)
 
 After: {.caption}
 
-![image alt text](image_3.png)
+![image alt text](image_3.jpg)
 
 ## Step 3: Add your html files and images
 
@@ -155,9 +155,9 @@ When you have a set of suitable files, add your HTML content and images to the r
 
 After: {.caption}
 
-![image alt text](image_4.png)
+![image alt text](image_4.jpg)
 
-![image alt text](image_5.png)
+![image alt text](image_5.jpg)
 
 ## Step 4: Remove default/placeholder content
 
