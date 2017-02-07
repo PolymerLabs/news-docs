@@ -280,6 +280,7 @@ The following custom properties are defined in news-app.html:
 * [--app-nav-text-color](#app-nav-text-color)
 * [--app-nav-deselected-text-color](#app-nav-deselected-text-color)
 * [--app-nav-selected-background-color](#app-nav-selected-background-color)
+* [--app-sub-section-headline](#app-sub-section-headline)
 
 ### `--app-border-style`
 
