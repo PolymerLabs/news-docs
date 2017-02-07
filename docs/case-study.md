@@ -17,7 +17,7 @@ Like other PWAs, News is designed with an [application shell architecture](https
 
 <div class="image-container layout horizontal">
   <div class="image-wrapper">
-    <img src="app structure.png" alt="app structure" width="600px">
+    <img src="app structure.jpg" alt="app structure" width="600px">
   </div>
 </div>
 
@@ -30,10 +30,10 @@ Like other PWAs, News is designed with an [application shell architecture](https
 
 <div class="image-container layout horizontal">
   <div class="image-wrapper">
-    <img src="news-list.png" alt="screenshot of the list view" width="300px">
+    <img src="news-list.jpg" alt="screenshot of the list view" width="300px">
   </div>
   <div class="image-wrapper">
-    <img src="news-article.png" alt="screenshot of the article view" width="300px">
+    <img src="news-article.jpg" alt="screenshot of the article view" width="300px">
   </div>
 </div>
 
@@ -171,7 +171,7 @@ These relationships are shown here:
 
 <div class="image-container layout horizontal">
   <div class="image-wrapper">
-    <img src="data binding.png" alt="data binding relationships" width="700px">
+    <img src="data binding.jpg" alt="data binding relationships" width="700px">
   </div>
 </div>
 
@@ -179,7 +179,7 @@ This sequence diagram shows the interactions between the elements of the News ap
 
 <div class="image-container layout horizontal">
   <div class="image-wrapper">
-    <img src="sequence diagram.png" alt="sequence diagram of data flow" width="700px">
+    <img src="sequence diagram.jpg" alt="sequence diagram of data flow" width="700px">
   </div>
 </div>
 
