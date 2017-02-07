@@ -241,6 +241,10 @@ article h3 {
   margin: 32px 0 16px;
 }
 
+article h3 > code {
+  font-weight: 600 !important;
+}
+
 article a {
   color: #1e88e5;
 }
@@ -255,9 +259,7 @@ article img {
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
 }
 
-p.caption {
-  margin-bottom: 0;
-  font-size: 16px;
+p.caption, b {
   font-weight: 500;
 }
 
@@ -267,7 +269,7 @@ code, pre {
 
 code {
   color: #0d47a1;
-  font-weight: 400;
+  font-weight: 300;
   word-wrap: break-word;
 }
 

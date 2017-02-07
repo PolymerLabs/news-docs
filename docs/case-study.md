@@ -47,7 +47,7 @@ For more information on the `<app-route>` Polymer element used in these implemen
 
 There are two main views in the News app. The `<news-list>` element displays a list of articles for the selected category - for example, Top Stories. The `<news-article>` element displays article content. When the user is offline and the category data is not cached, both views display a network error via the `<news-network-warning>` element:
 
-`news-list.html` { .caption }
+`news-list.html`
 ```html
 <news-network-warning
     hidden$="[[!failure]]"
@@ -97,7 +97,7 @@ The `<iron-pages>` element in `<news-app>` displays the `<news-list>` element (b
 
 `news-app.html`
 ```html
-    <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
+<iron-pages role="main" selected="[[page]]" attr-for-selected="name">
 ```
 
 The `<app-route>` element in `<news-list>` consumes the next part of the URL (`/top-stories`), and sets `categoryName` to `top-stories`:
@@ -115,11 +115,10 @@ Two-way data binding in the host element ensures that the data is passed back to
 `news-app.html`
 ```html
 <news-list
-  ...
-  category-name="{{categoryName}}"
-  ...
-  >
-</news-list>
+    ...
+    category-name="{{categoryName}}"
+    ...
+    ...></news-list>
 ```
 
 ### Part 2: Data retrieval
@@ -129,12 +128,11 @@ Two-way data binding in the host element ensures that the data is passed back to
 `news-app.html`
 ```html
 <news-data
-  ...
-  category-name="[[categoryName]]"
-  article-id="[[articleId]]"
-  ...
-  >
-</news-data>
+    ...
+    category-name="[[categoryName]]"
+    article-id="[[articleId]]"
+    ...
+    ...></news-data>
 ```
 
 These properties tell `<news-data>` which resources to retrieve. `<news-data>` then creates an `XMLHttpRequest` for the relevant resources, and stores the resulting category or article information in its `category` and `article` properties.
@@ -146,12 +144,12 @@ The `category` and `article` properties are two-way bound from `<news-app>` to `
 `news-app.html`
 ```html
 <news-data
-  ...
-  category="{{category}}"
-  ...
-  article="{{article}}"
-  ...
-  ></news-data>
+    ...
+    category="{{category}}"
+    ...
+    article="{{article}}"
+    ...
+    ...></news-data>
 ```
 
 ### Part 3: Data display
@@ -163,10 +161,10 @@ For example, if the user has visited `/list/top_stories`, `<news-data>` has popu
 `news-app.html`
 ```html
 <news-list
-  ...
-  category="[[category]]"
-  ...
-></news-list>
+    ...
+    category="[[category]]"
+    ...
+    ...></news-list>
 ```
 
 These relationships are shown here:
@@ -240,7 +238,7 @@ If `IntersectionObserver` isn't available, the application briefly delays displa
 
 We built a [version of the News app](https://github.com/PolymerLabs/news/tree/amp) for integration with [AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In the AMP version of News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by AMP documents which can be loaded as standalone pages.
 
-The AMP project supports adding an AMP document to a shadow root on your page. Here’s an example: https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js
+The AMP project supports adding an AMP document to a shadow root on your page. Here’s an example: <code>[https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js](https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js)</code>
 
 To support this in the AMP version of the News app, we created [the `<amp-viewer>` element](https://github.com/PolymerLabs/amp-viewer/). The `<amp-viewer>` element works similarly to an iframe. To load an AMP document inside the viewer, set its `src` attribute to the URL of the AMP document. Styles will be applied to the content, scoped by its shadow root.
 

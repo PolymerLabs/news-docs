@@ -282,7 +282,7 @@ The following custom properties are defined in news-app.html:
 
 ### `--app-border-style`
 
-(Default: `1px solid #CCC`) {.caption}
+<b>Default:</b> `1px solid #CCC`
 
 The width, style and color of the borders around menu bars, category headers, article headlines and items in list views.
 
@@ -299,7 +299,7 @@ Examples: {.caption}
 
 ### `--app-transparent-border-style`
 
-(Default: `1px solid rgba(255, 255, 255, 0.5)`) {.caption}
+<b>Default:</b> `1px solid rgba(255, 255, 255, 0.5)`
 
 The width, style and color of the borders around the date line and featured item above an image. (For performance, this is a separate property.)
 
@@ -316,14 +316,14 @@ Examples: {.caption}
 
 ### `--app-button-border-style`
 
-(Default: `2px solid #222`) {.caption}
+<b>Default:</b> `2px solid #222`
 
 Width, style and color of borders around buttons. Used in news-network-warning.html.
 
 
 ### `--app-cover-text-color`
 
-(Default: `#FFF`) {.caption}
+<b>Default:</b> `#FFF`
 
 Color of the text on the featured item in the list view. See [Notes](#notes) below.
 
@@ -340,7 +340,7 @@ Examples: {.caption}
 
 ### `--app-nav-background-color`
 
-(Default: `#222`) {.caption}
+<b>Default:</b> `#222`
 
 Background of the sticky nav bar/mobile app drawer.
 
@@ -357,16 +357,18 @@ Examples: {.caption}
 
 ### `--app-nav-text-color`
 
-(Default: `#FFF`) {.caption}
+<b>Default:</b> `#FFF`
 
 Text color for the sticky nav bar/mobile app drawer.
 
 
 ### `--app-nav-deselected-text-color`
 
-(Default: `#CCC`) {.caption}
+<b>Default:</b> `#CCC`
 
 Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
+
+Examples: {.caption}
 
 `--app-nav-deselected-text-color: #888;`
 
@@ -379,9 +381,11 @@ Text color of category links in the sticky nav bar menu/mobile app drawer.</p>
 
 ### `--app-nav-selected-background-color`
 
-(Default: `#555`) {.caption}
+<b>Default:</b> `#555`
 
 Background color of current category in mobile app drawer.
+
+Examples: {.caption}
 
 `--app-nav-selected-background-color: #555;`
 
