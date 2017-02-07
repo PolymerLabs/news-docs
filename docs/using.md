@@ -102,11 +102,11 @@ _routePageChanged: function(page) {
 
 ### 2.3 Create `.json` files for each category
 
-For each category, create a `.json` file containing a list of the articles and article metadata in that category. Follow the [specification for <category>.json files](https://docs.google.com/document/d/1DmL34vDDjpkaZ45dWMzwdA9sTfB9JjFdZWaKDD8Muo0/edit#). Alternately, you could implement a web service that returns the list of articles for a given category in this format.
+For each category, create a `.json` file containing a list of the articles and article metadata in that category. Follow the [specification for `<category>.json` files](categories.md). Alternately, you could implement a web service that returns the list of articles for a given category in this format.
 
-*Note: **Category files are dynamically loaded. A specific **<category>.json** file is not loaded until that category is selected. Only the default route is loaded right away.*
+*Note: Category files are dynamically loaded. A specific `<category>.json` file is not loaded until that category is selected. Only the default route is loaded right away.*
 
-Place the <category>.json files in the /data folder; or modify news-data.html to point to the location of your <category>.json files.
+Place the `<category>.json` files in the `/data` folder; or modify `news-data.html` to point to the location of your `<category>.json` files.
 
 `news-data.html`: Before {.caption}
 ```
@@ -165,9 +165,9 @@ After: {.caption}
 
 Once you’ve got your own content up and running, you can delete the placeholder content in the `/data` folder.
 
-* From `/data`, remove any .json files for any categories that don’t exist.
+* From `/data`, remove any `.json` files for any categories that don’t exist.
 
-* From `/data/articles`, remove any .html files that you don’t need.
+* From `/data/articles`, remove any `.html` files that you don’t need.
 
 * From `/data/images`, remove any images that you don’t need.
 
@@ -183,10 +183,9 @@ polymer build
 
 ### 5.2 Test the build
 
-To test the build, you can serve your app on the development server. The polymer build command generates both a bundled and unbundled version of your app.
+To test the build, you can serve your app on the development server. The `polymer build` command generates both a bundled and unbundled version of your app.
 
 * In a bundled build, all fragments are bundled into the same file to reduce the number of file requests. This is optimal for sending to clients or serving from servers that are not HTTP/2 compatible.
-
 * In an unbundled build, fragments are left in separate files. Optimal for HTTP/2-compatible servers and clients.
 
 You can choose whether to serve the bundled or unbundled version.
