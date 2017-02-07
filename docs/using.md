@@ -102,7 +102,7 @@ _routePageChanged: function(page) {
 
 ### 2.3 Create `.json` files for each category
 
-For each category, create a `.json` file containing a list of the articles and article metadata in that category. Follow the [specification for `<category>.json` files](categories.md). Alternately, you could implement a web service that returns the list of articles for a given category in this format.
+For each category, create a `.json` file containing a list of the articles and article metadata in that category. Follow the [specification for `<category>.json` files](categories.html). Alternately, you could implement a web service that returns the list of articles for a given category in this format.
 
 *Note: Category files are dynamically loaded. A specific `<category>.json` file is not loaded until that category is selected. Only the default route is loaded right away.*
 
@@ -177,7 +177,7 @@ Once you’ve got your own content up and running, you can delete the placeholde
 
 To build your app, open a terminal, go to the `/news` folder and type
 
-```
+```bash
 polymer build
 ```
 
@@ -206,6 +206,6 @@ dev_appserver.py build/bundled
 
 To deploy your app to Google App Engine:
 
-```
+```bash
 gcloud app deploy build/bundled/app.yaml --project [YOUR_PROJECT_ID]
 ```

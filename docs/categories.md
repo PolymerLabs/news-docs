@@ -9,18 +9,18 @@ Categories are listed in the definition of the `<news-data>` element:
 `news-data.html`
 ```html
 <dom-module id="news-data">
-	<script>
-	(function() {
-		var categoryList = [
-			{name: 'top_stories', title: 'Top Stories'},
-			{name: 'doodles', title: 'Doodles'},
-			{name: 'chrome', title: 'Chrome'},
-			{name: 'search', title: 'Search'},
-			{name: 'shopping_payments', title: 'Shopping & Payments'},
-			{name: 'nonprofits', title: 'Nonprofits'}
-		];
+  <script>
+  (function() {
+    var categoryList = [
+      {name: 'top_stories', title: 'Top Stories'},
+      {name: 'doodles', title: 'Doodles'},
+      {name: 'chrome', title: 'Chrome'},
+      {name: 'search', title: 'Search'},
+      {name: 'shopping_payments', title: 'Shopping & Payments'},
+      {name: 'nonprofits', title: 'Nonprofits'}
+    ];
 ```
-		
+
 # `<category>.json` file specification
 
 Each category must have a `.json` file named after it. The `<category>.json` file stores metadata for the articles in that category.
@@ -28,7 +28,8 @@ Each category must have a `.json` file named after it. The `<category>.json` fil
 A `<category>.json` file contains an array of objects representing news articles in that category. For example:
 
 [chrome.json](https://github.com/PolymerLabs/news/blob/master/data/chrome.json)
-[{ 
+```javascript
+[{
     "title": "Experience virtual reality art in your browser",
     "time": "Tue, 19 Apr 2016 18:50:00 +0000",
     "author": "Jeff Nusz",
@@ -45,6 +46,7 @@ A `<category>.json` file contains an array of objects representing news articles
   }
   ...
 ]
+```
 
 ## Properties
 
@@ -72,7 +74,7 @@ Example:
 
 `"time": "Tue, 19 Apr 2016 18:50:00 +0000"`
 
-### author
+### `author`
 
 *Required*
 
@@ -80,7 +82,7 @@ Type: `String`
 
 Article author.
 
-Example: 
+Example:
 
 `"author": "Jeff Nusz"`
 
@@ -90,7 +92,7 @@ Example:
 
 Type: `String`
 
-Article category label. This is the category text that appears with the article when it is presented in a list or article view. 
+Article category label. This is the category text that appears with the article when it is presented in a list or article view.
 
 Example:
 
@@ -104,7 +106,7 @@ Example:
 
 Type: `String` (URL-friendly)
 
-Must be unique and URL-friendly. 
+Must be unique and URL-friendly.
 
 Example:
 

@@ -229,6 +229,16 @@ article > section {
   text-align: left;
 }
 
+article h1 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.1;
+  margin: 40px 0 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #222;
+}
+
 article h2 {
   font-weight: 600;
   margin: 40px 0 24px;
@@ -270,7 +280,6 @@ code, pre {
 code {
   color: #0d47a1;
   font-weight: 300;
-  word-wrap: break-word;
 }
 
 pre {
