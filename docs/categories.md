@@ -27,7 +27,7 @@ Each category must have a `.json` file named after it. The `<category>.json` fil
 
 A `<category>.json` file contains an array of objects representing news articles in that category. For example:
 
-[chrome.json](https://github.com/PolymerLabs/news/blob/master/data/chrome.json)
+[chrome.json](https://github.com/Polymer/news/blob/master/data/chrome.json)
 ```javascript
 [{
     "title": "Experience virtual reality art in your browser",

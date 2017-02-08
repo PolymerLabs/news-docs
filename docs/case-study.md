@@ -236,7 +236,7 @@ If `IntersectionObserver` isn't available, the application briefly delays displa
 
 ## AMP version of the News app
 
-We built a [version of the News app](https://github.com/PolymerLabs/news/tree/amp) for integration with [AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In the AMP version of News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by AMP documents which can be loaded as standalone pages.
+We built a [version of the News app](https://github.com/Polymer/news/tree/amp) for integration with [AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In the AMP version of News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by AMP documents which can be loaded as standalone pages.
 
 The AMP project supports adding an AMP document to a shadow root on your page. Here’s an example: <code>[https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js](https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js)</code>
 

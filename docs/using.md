@@ -4,7 +4,7 @@ title: "Using the News app"
 
 <!-- toc -->
 
-You can download the News source code from its [GitHub repository](https://github.com/PolymerLabs/news). To build the News app and modify it locally, follow the steps in the README.
+You can download the News source code from its [GitHub repository](https://github.com/Polymer/news). To build the News app and modify it locally, follow the steps in the README.
 
 This tutorial will quickly guide you through plugging your own content into the News app and publishing your site.
 
