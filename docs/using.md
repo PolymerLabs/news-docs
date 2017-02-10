@@ -12,9 +12,9 @@ To follow it, you’ll need a set of articles in html files, along with all of t
 
 Notes:
 
-* This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on [Theming and styling the News app](theming.md).
+* This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on [Theming and styling the News app](theming.html).
 
-* For information on how the News app was implemented, see the [Case Study](case-study.md).
+* For information on how the News app was implemented, see the [Case Study](https://www.polymer-project.org/1.0/toolbox/news-case-study).
 
 ## Step 1: Change the name of your site
 

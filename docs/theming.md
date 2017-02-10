@@ -87,7 +87,7 @@ To change border styles and colors throughout the app, edit the value of `--app-
 
 ## Tutorial: Modify the News theme
 
-In this tutorial, we modify the look and feel of the News theme from [the defaults](https://polymer-news.appspot.com/) to match [this design](https://polymer-news-theming.appspot.com).
+In this tutorial, we modify the look and feel of the News theme from [the defaults](https://news.polymer-project.org/) to match [this design](https://polymer-news-theming.appspot.com).
 
 Before: {.caption}
 
