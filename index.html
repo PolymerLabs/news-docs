@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p>A high-quality starting point for cutting-edge Progressive Web Apps.</p>
       <p>Built on modern web technology. Use out-of-the-box, or customize and extend.</p>
       <div class="hero-buttons">
-        <a class="docs-button" href="https://news.polymer-project.com" target="_blank">Demo</a>
+        <a class="docs-button" href="https://news.polymer-project.org" target="_blank">Demo</a>
         <a class="docs-button" href="/docs/using.html">Get Started</a>
         <a class="docs-button" href="https://github.com/Polymer/news" target="_blank">View on GitHub</a>
       </div>
@@ -103,7 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </docs-app>
 
   <script>
-    Polymer = {lazyRegister: true, dom: 'shadow'};
+    window.Polymer = window.Polymer || {lazyRegister: true, dom: 'shadow'};
 
     (function() {
       if ('registerElement' in document
