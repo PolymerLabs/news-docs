@@ -11,7 +11,7 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
 ##### Setup
 
-    git clone https://github.com/polymerlabs/news-docs.git
+    git clone https://github.com/polymer/news-docs.git
     cd news-docs
     npm install
     bower install
