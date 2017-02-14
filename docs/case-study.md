@@ -7,7 +7,7 @@ title: "Case study: the News app"
 News is a full-featured Progressive Web App (PWA) demo built using the Toolbox. You can try it out
 here:
 
-<a href="https://news.polymer-project.org/" target="_blank" class="docs-button">Launch News demo</a>
+<a href="https://news.polymer-project.org/" target="_blank" class="blue-button">Launch News demo</a>
 
 This case study shows how News uses the principles of Progressive Web App (PWA) design to deliver a
 great
@@ -264,7 +264,7 @@ with [AMP (Accelerated Mobile Pages)](https://www.ampproject.org/) documents. In
 News, the HTML content files (for example, `/data/articles/it-takes-teacher.html`) are replaced by
 AMP documents which can be loaded as standalone pages.
 
-<a href="https://polymer-news-amp.appspot.com/" target="_blank" class="docs-button">Launch News-AMP demo</a>
+<a href="https://polymer-news-amp.appspot.com/" target="_blank" class="blue-button">Launch News-AMP demo</a>
 
 The AMP project supports adding an AMP document to a shadow root on your page. Here’s an example:
 
