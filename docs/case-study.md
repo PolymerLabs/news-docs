@@ -298,8 +298,7 @@ AMP documents which can be loaded as standalone pages.
 
 The AMP project supports adding an AMP document to a shadow root on your page. Here’s an example:
 
-[https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js](https://github.com/amp
-project/amphtml/blob/master/examples/pwa/pwa.js)
+<a href="https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js" target="_blank" style="overflow-wrap: break-word;">https://github.com/ampproject/amphtml/blob/master/examples/pwa/pwa.js</a>
 
 To support this in the AMP version of the News app, we created [the `<amp-viewer>`
 element](https://github.com/PolymerLabs/amp-viewer/). The `<amp-viewer>` element works similarly to
