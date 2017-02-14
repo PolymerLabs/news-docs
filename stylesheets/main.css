@@ -70,7 +70,8 @@ a {
   height: auto;
 }
 
-.docs-button {
+.docs-button,
+.blue-button {
   display: inline-block;
   box-sizing: border-box;
   margin: 0 4px;
@@ -87,12 +88,14 @@ a {
   -webkit-appearance: none;
 }
 
-.docs-button:active {
+.docs-button:active,
+.blue-button:active {
   background-color: #000;
   color: #FFF;
 }
 
-.docs-button:hover {
+.docs-button:hover,
+.blue-button:hover {
   text-decoration: none !important;
 }
 

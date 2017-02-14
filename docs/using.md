@@ -14,7 +14,7 @@ Notes:
 
 * This guide is for populating your News app with content. To change the look and feel of your app, see the documentation on [Theming and styling the News app](theming.html).
 
-* For information on how the News app was implemented, see the [Case Study](https://www.polymer-project.org/1.0/toolbox/news-case-study).
+* For information on how the News app was implemented, see the [Case Study](case-study.html).
 
 ## Step 1: Change the name of your site
 
@@ -136,7 +136,7 @@ After: {.caption}
 
 ## Step 3: Add your html files and images
 
-News articles are regular HTML files, and should be valid. These files are served directly for indexing by search bots - see the Case Study for more information.
+News articles are regular HTML files, and should be valid.
 
 Article content must be in an element with a `.content` class:
 ```
